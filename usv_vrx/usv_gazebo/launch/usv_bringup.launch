@@ -3,16 +3,16 @@
 
 	<!-- No change for gmapping -->
 	<arg name="override_location" default="true" />
-	<arg name="x" default="158" />
-	<arg name="y" default="108" />
+	<arg name="x" default="100" /> <!--158-->
+	<arg name="y" default="-50" /> <!--108-->
 	<arg name="yaw" default="0" />
 	<arg name="gui" default="true" />
-	<arg name="world_name" default="sandisland"/>
-   <arg name="thrust_config" default="H" />
+	<arg name="world_name" default="RAITE"/> <!--sandisland-->
+   	<arg name="thrust_config" default="H" />
 	<arg name="verbose" default="true"/>
     
 
-   <include file="$(find vrx_2019)/launch/$(arg world_name).launch">
+   <include file="$(find vrx_gazebo)/launch/$(arg world_name).launch">
       <arg name="urdf"           value="$(find usv_description)/configs/usv_mtu.urdf"/>
       <arg name="x"              value="$(arg x)"                 if="$(arg override_location)" />
       <arg name="y"              value="$(arg y)"                 if="$(arg override_location)" />

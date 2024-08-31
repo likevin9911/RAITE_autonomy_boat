@@ -1,115 +1,66 @@
-#!/usr/bin/env python
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import rospy
-from sensor_msgs.msg import PointCloud2
+import pcl
+from sensor_msgs.msg import PointCloud2, NavSatFix
 import sensor_msgs.point_cloud2 as pc2
+from visualization_msgs.msg import Marker
+import numpy as np
+from std_msgs.msg import ColorRGBA, Float32MultiArray
 from sensor_msgs.msg import PointField
 from std_msgs.msg import Header
-from sklearn.cluster import DBSCAN
-import numpy as np
 import math
 import tf2_ros
-import tf2_geometry_msgs
-from geometry_msgs.msg import PointStamped
-from visualization_msgs.msg import Marker
+import geometry_msgs.msg
+from geopy.distance import geodesic
 
-# Function to transform a point from LiDAR frame to global frame
-def transform_lidar_to_global(point, target_frame, source_frame):
-    tf_buffer = tf2_ros.Buffer()
-    listener = tf2_ros.TransformListener(tf_buffer)
-    point_stamped = PointStamped()
-    point_stamped.header.frame_id = source_frame
-    point_stamped.point.x = point[0]
-    point_stamped.point.y = point[1]
-    point_stamped.point.z = point[2]
+# Adjustable variables
+MIN_Z_HEIGHT = -1.0  # Set this value to your desired minimum Z height
+FRONT_DEGREES = 40  # Degrees in front of the LiDAR to keep
 
-    try:
-        transform = tf_buffer.lookup_transform(target_frame, source_frame, rospy.Time(0), rospy.Duration(1.0))
-        transformed_point = tf2_geometry_msgs.do_transform_point(point_stamped, transform)
-        return transformed_point.point.x, transformed_point.point.y, transformed_point.point.z
-    except tf2_ros.LookupException as e:
-        rospy.logerr(f"Transform lookup failed: {e}")
-        return None
+current_gps = None
+bbox_gps_storage = {}
 
-# Function to calculate bounding box from clustered points
-def calculate_bounding_box(points):
-    min_x = min(point[0] for point in points)
-    max_x = max(point[0] for point in points)
-    min_y = min(point[1] for point in points)
-    max_y = max(point[1] for point in points)
-    min_z = min(point[2] for point in points)
-    max_z = max(point[2] for point in points)
-    return (min_x, min_y, min_z), (max_x, max_y, max_z)
+def gps_callback(gps_msg):
+    global current_gps
+    current_gps = (gps_msg.latitude, gps_msg.longitude, gps_msg.altitude)
 
-# Function to calculate the centroid of a bounding box
-def calculate_centroid(bbox_min, bbox_max):
-    centroid_x = (bbox_min[0] + bbox_max[0]) / 2
-    centroid_y = (bbox_min[1] + bbox_max[1]) / 2
-    centroid_z = (bbox_min[2] + bbox_max[2]) / 2
-    return centroid_x, centroid_y, centroid_z
+def pointcloud_callback(pointcloud_msg):
+    # print("Received point cloud data")
 
-# Function to publish bounding boxes as markers in RViz
-def publish_bounding_box(marker_pub, bbox_min, bbox_max, frame_id, marker_id):
-    marker = Marker()
-    marker.header.frame_id = frame_id
-    marker.header.stamp = rospy.Time.now()
-    marker.ns = "bounding_box"
-    marker.id = marker_id
-    marker.type = Marker.CUBE
-    marker.action = Marker.ADD
-    marker.pose.position.x = (bbox_min[0] + bbox_max[0]) / 2
-    marker.pose.position.y = (bbox_min[1] + bbox_max[1]) / 2
-    marker.pose.position.z = (bbox_min[2] + bbox_max[2]) / 2
-    marker.scale.x = bbox_max[0] - bbox_min[0]
-    marker.scale.y = bbox_max[1] - bbox_min[1]
-    marker.scale.z = bbox_max[2] - bbox_min[2]
-    marker.color.a = 0.5  # Transparency
-    marker.color.r = 1.0
-    marker.color.g = 0.0
-    marker.color.b = 0.0
+    #wait for for gps topic
+    global current_gps
 
-    marker_pub.publish(marker)
+    if current_gps is None:
+        rospy.logwarn("No GPS data available yet.")
+        return
 
-def callback(pointcloud_msg):
-    # Extract points from the PointCloud2 message
-    points = list(pc2.read_points(pointcloud_msg, field_names=("x", "y", "z"), skip_nans=True))
+    # Convert PointCloud2 to PCL PointCloud
+    point_list = list(pc2.read_points(pointcloud_msg, field_names=("x", "y", "z"), skip_nans=True))
+    if not point_list:
+        # print("No points found in point cloud")
+        return
+   
+    # print(f"Number of points in point cloud: {len(point_list)}")
+    pcl_data = pcl.PointCloud(np.array(point_list, dtype=np.float32))
 
-    # Calculate the number of points to keep (front 20%)
-    num_points = len(points)
-    front_20_percent = int(num_points * 0.2)
+    # Filter points by minimum Z height
+    passthrough = pcl_data.make_passthrough_filter()
+    passthrough.set_filter_field_name("z")
+    passthrough.set_filter_limits(MIN_Z_HEIGHT, np.max(pcl_data.to_array()[:, 2]))
+    cloud_filtered = passthrough.filter()
+    # print(f"Height filtering applied, remaining points: {cloud_filtered.size}")
 
-    # Sort points by x-coordinate to get the front points (assuming x is forward direction)
-    points_sorted = sorted(points, key=lambda point: point[0], reverse=True)
-    front_points = points_sorted[:front_20_percent]
+    # Filter points within the front degrees
+    front_cloud = []
+    for point in cloud_filtered.to_array():
+        angle = math.degrees(math.atan2(point[1], point[0]))  # Calculate angle in degrees
+        if -FRONT_DEGREES / 2 <= angle <= FRONT_DEGREES / 2:
+            front_cloud.append(point)
 
-    # Cluster the front points using DBSCAN
-    points_np = np.array(front_points)
-    clustering = DBSCAN(eps=0.5, min_samples=10).fit(points_np)
-    labels = clustering.labels_
+    # print(f"Front {FRONT_DEGREES} degrees points selected, remaining points: {len(front_cloud)}")
 
-    unique_labels = set(labels)
-    marker_id = 0
-
-    for label in unique_labels:
-        if label == -1:
-            continue  # Skip noise points
-
-        cluster_points = [p for p, l in zip(front_points, labels) if l == label]
-        bbox_min, bbox_max = calculate_bounding_box(cluster_points)
-        centroid = calculate_centroid(bbox_min, bbox_max)
-
-        # Transform centroid to GPS coordinates
-        transformed_centroid = transform_lidar_to_global(centroid, "gps_frame", pointcloud_msg.header.frame_id)
-        
-        if transformed_centroid:
-            rospy.loginfo(f"Cluster centroid GPS coordinates: {transformed_centroid}")
-
-        # Publish the bounding box marker
-        publish_bounding_box(marker_pub, bbox_min, bbox_max, pointcloud_msg.header.frame_id, marker_id)
-        marker_id += 1
-
-    # Publish the new PointCloud2 message for the front points
+    # Create and publish the filtered point cloud message
     header = Header()
     header.stamp = rospy.Time.now()
     header.frame_id = pointcloud_msg.header.frame_id
@@ -118,15 +69,127 @@ def callback(pointcloud_msg):
         PointField('y', 4, PointField.FLOAT32, 1),
         PointField('z', 8, PointField.FLOAT32, 1),
     ]
+    filtered_cloud_msg = pc2.create_cloud(header, fields, front_cloud)
+    filtered_cloud_pub.publish(filtered_cloud_msg)
+    # print("Published filtered point cloud with front degrees and min Z height")
 
-    front_pointcloud_msg = pc2.create_cloud(header, fields, front_points)
-    pub.publish(front_pointcloud_msg)
+    # Optional: Add clustering and bounding boxes for visualization
+    if len(front_cloud) > 0:
+        pcl_front_cloud = pcl.PointCloud(np.array(front_cloud, dtype=np.float32))
+        tree = pcl_front_cloud.make_kdtree()
 
-if __name__ == '__main__':
-    rospy.init_node('pointcloud_front_20_percent', anonymous=True)
+        ec = pcl_front_cloud.make_EuclideanClusterExtraction()
+        ec.set_ClusterTolerance(0.3)  # Adjust as needed
+        ec.set_MinClusterSize(30)  # Adjust as needed
+        ec.set_MaxClusterSize(15000)  # Adjust as needed
+        ec.set_SearchMethod(tree)
+        cluster_indices = ec.Extract()
+        # print(f"Number of clusters found: {len(cluster_indices)}")
 
-    rospy.Subscriber('/velodyne_points', PointCloud2, callback)
-    pub = rospy.Publisher('/front_velodyne_points', PointCloud2, queue_size=10)
-    marker_pub = rospy.Publisher('/bounding_box_markers', Marker, queue_size=10)
+        marker_id = 0
+        angles_msg = Float32MultiArray()  # To store angles of the centers
+
+        for indices in cluster_indices:
+            points = []
+            for index in indices:
+                points.append([pcl_front_cloud[index][0], pcl_front_cloud[index][1], pcl_front_cloud[index][2]])
+
+            points_array = np.array(points)
+            min_point = points_array.min(axis=0)
+            max_point = points_array.max(axis=0)
+
+            # Calculate the center of the bounding box
+            center_x = (min_point[0] + max_point[0]) / 2.0
+            center_y = (min_point[1] + max_point[1]) / 2.0
+            center_z = (min_point[2] + max_point[2]) / 2.0
+
+            # Calculate the angle of the center point
+            center_angle = math.degrees(math.atan2(center_y, center_x))
+
+            # Calculate the distance to the center point
+            center_distance = math.sqrt(center_x**2 + center_y**2 + center_z**2)
+
+            # Print the angle and distance
+            print(f"Center angle: {center_angle:.2f} degrees, Distance: {center_distance:.2f} meters")
+
+            #transform to baselink:
+            try:
+                transform = tf_buffer.lookup_transform('base_link', pointcloud_msg.header.frame_id, rospy.Time(0))
+                point_in_velodyne = geometry_msgs.msg.PoseStamped()
+                point_in_velodyne.header.frame_id = pointcloud_msg.header.frame_id
+                point_in_velodyne.pose.position.x = center_x
+                point_in_velodyne.pose.position.y = center_y
+                point_in_velodyne.pose.position.z = center_z
+                point_in_base_link = tf2_geometry_msgs.do_transform_pose(point_in_velodyne, transform)
+                base_link_x = point_in_base_link.pose.position.x
+                base_link_y = point_in_base_link.pose.position.y
+                base_link_z = point_in_base_link.pose.position.z
+
+                # Convert to GPS using the latest GPS data
+                north_offset = base_link_x
+                east_offset = base_link_y
+                new_gps = geodesic(meters=north_offset).destination(current_gps, 0)  # 0 degrees is north
+                new_gps = geodesic(meters=east_offset).destination(new_gps, 90)  # 90 degrees is east
+                bbox_gps_coordinates = (new_gps.latitude, new_gps.longitude)
+
+                # Store GPS coordinates and angle
+                bbox_gps_storage[marker_id] = {
+                    'gps_coordinates': bbox_gps_coordinates,
+                    'angle': center_angle  # Store the angle or convert to a heading if needed
+                }
+                print(f"Stored GPS coordinates for bbox {marker_id}: {bbox_gps_storage[marker_id]}")
+
+            except (tf.LookupException, tf.ConnectivityException, tf.ExtrapolationException):
+                rospy.logerr("TF transform lookup failed")
+                return
+
+            angles_msg.data.append(center_angle)  # Store the angle in the message
+
+            # Create a Marker for each cluster's bounding box
+            marker = Marker()
+            marker.header.frame_id = pointcloud_msg.header.frame_id
+            marker.header.stamp = rospy.Time.now()
+            marker.ns = "velodyne"
+            marker.id = marker_id
+            marker.type = Marker.CUBE
+            marker.action = Marker.ADD
+
+            # Bounding box center
+            marker.pose.position.x = center_x
+            marker.pose.position.y = center_y
+            marker.pose.position.z = center_z
+
+            # Bounding box dimensions
+            marker.scale.x = max_point[0] - min_point[0]
+            marker.scale.y = max_point[1] - min_point[1]
+            marker.scale.z = max_point[2] - min_point[2]
+
+            marker.color = ColorRGBA(1.0, 0.0, 0.0, 0.5)  # Red with 50% transparency
+
+            # Publish the Marker
+            marker_pub.publish(marker)
+            # print(f"Published marker {marker_id}")
+
+            marker_id += 1
+
+        # Publish the angles of the cluster centers
+        angles_pub.publish(angles_msg)
+        # print("Published angles of cluster centers")
+
+if __name__ == "__main__":
+    rospy.init_node('pointcloud_segmenter_filtered', anonymous=True)
+
+    #initialize tf listener and memory
+    tf_buffer = tf2_ros.Buffer()
+    listener = tf2_ros.TransformListener(tf_buffer)
+    bbox_gps_storage = {}
+
+    #subscribe to gps topic
+    rospy.Subscriber("/gps/fix", NavSatFix, gps_callback)
+
+    rospy.Subscriber("/velodyne_points", PointCloud2, pointcloud_callback)
+    marker_pub = rospy.Publisher("/bounding_box", Marker, queue_size=10)
+    filtered_cloud_pub = rospy.Publisher("/filtered_velodyne_points", PointCloud2, queue_size=10)
+    angles_pub = rospy.Publisher("/bounding_box_angles", Float32MultiArray, queue_size=10)  # Publish angles
 
     rospy.spin()

@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- Arguments -->
+  <arg name="override_location" default="true" />
+  <arg name="x"     default="158"/>
+  <arg name="y"     default="108"/>
+  <arg name="yaw"   default="0"/>
+  <arg name="namespace" default="" />
+  <arg name="gui" default="true"/>
+  <arg name="paused" default="false"/>
+  <arg name="set_timeout" default="false"/>
+  <arg name="timeout" default="0.0"/>
+  <arg name="world_name" default="$(find vrx_gazebo)/worlds/lake.world"/>
+  <arg name="thrust_config" default="H" />
+  <arg name="verbose" default="true"/>
+
+  <!-- Include the world launch file -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+      <arg name="world_name" value="$(arg world_name)"/>
+      <arg name="paused" value="$(arg paused)"/>
+      <arg name="use_sim_time" value="true"/>
+      <arg name="gui" value="$(arg gui)"/>
+      <arg name="headless" value="false"/>
+      <arg name="debug" value="false"/>
+      <arg name="verbose" value="true"/>
+  </include>
+
+  <!-- Publish the World NED Frame -->
+  <include file="$(find vrx_gazebo)/launch/publish_world_ned_frame.launch"/>
+
+  <!-- Publish World Models -->
+  <node name="publish_world_models"
+      pkg="vrx_gazebo"
+      type="publish_world_models.py"
+      output="screen">
+      <rosparam subst_value="true">
+          meshes:
+              lake:
+                  mesh: package://vrx_gazebo/models/lake/meshes/LakeBottom.dae
+                  model: lake
+      </rosparam>
+  </node>
+
+
+
+</launch>
+

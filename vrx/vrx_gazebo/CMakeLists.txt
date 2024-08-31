@@ -104,7 +104,7 @@ target_link_libraries(light_buoy_plugin
 add_dependencies(light_buoy_plugin ${catkin_EXPORTED_TARGETS}
   light_buoy_colors_msgs
 )
-install(TARGETS light_buoy_plugin
+install(TARGETS light_buoy_plugin 
   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}

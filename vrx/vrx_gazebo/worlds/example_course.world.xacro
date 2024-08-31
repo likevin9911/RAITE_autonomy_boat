@@ -2,8 +2,8 @@
 <!-- World containing sydneyregatta model and some course challenges -->
 <sdf version="1.6" xmlns:xacro="http://ros.org/wiki/xacro">
   <world name="robotx_example_course">
-    <xacro:include filename="$(find vrx_gazebo)/worlds/sydneyregatta.xacro" />
-    <xacro:sydneyregatta />
+    <!--xacro:include filename="$(find vrx_gazebo)/worlds/sydneyregatta.xacro" />
+    <xacro:sydneyregatta /-->
     <!--Waves-->
     <xacro:include filename="$(find wave_gazebo)/world_models/ocean_waves/model.xacro"/>
     <xacro:ocean_waves scale="2.5"/>
@@ -13,13 +13,73 @@
     <xacro:usv_wind_gazebo>
       <wind_objs>
         <wind_obj>
-          <name>wamv</name>
-          <link_name>wamv/base_link</link_name>
+          <!-- <name> <name/>-->
+          <link_name>base_link</link_name>
           <coeff_vector>.5 .5 .33</coeff_vector>
         </wind_obj>
       </wind_objs>
     </xacro:usv_wind_gazebo>
 
+    <!--include>
+      <uri>model://sand_heightmap</uri>
+      <pose>48 7.5 -18 0 0 0</pose>
+    </include-->
+
+    <include>
+      <uri>model://house1</uri>
+      <pose>102.5 -67.3 -2 0 0 -0.402514</pose>
+    </include>
+    
+    <include>
+      <uri>model://house2</uri>
+      <pose>73.32 -49.6 -2 0 0 0</pose>
+    </include>
+    
+    <include>
+      <uri>model://house3</uri>
+      <pose>105.8 -36 -2 0 0 -2.584856</pose>
+    </include>
+    
+    <include>
+      <uri>model://suv</uri>
+      <pose>91.35 -53.5 -2 0 0 0</pose>
+    </include>
+    
+    <!--include>
+      <uri>model://vessel_a</uri>
+      <pose>80.52 -69.79 0 0 0 0</pose>
+    </include>
+    
+    <include>
+      <uri>model://vessel_g</uri>
+      <pose>73.03 36.53 0 0 0 0</pose>
+    </include-->
+    
+    <include>
+      <uri>model://pickup</uri>
+      <pose>88 -38 -2 0 0 -0.580776</pose>
+    </include>
+
+     <include>
+      <uri>model://symphonie_lake</uri>
+      <pose>-90 60 8 0 0 0</pose>
+    </include>
+    
+     <!-- Global light source -->
+    <light type="directional" name="sun1">
+      <pose>50 0 150 0 0 0</pose>
+      <diffuse>1 1 1 1</diffuse>
+      <specular>.1 .1 .1 1</specular>
+      <direction>0.3 0.3 -1</direction>
+      <cast_shadows>true</cast_shadows>
+    </light>
+
+    <!-- Global light source -->
+    <include>
+      <uri>model://sun</uri>
+    </include>
+    
+    
     <!-- The light buoy 
     <include>
       <uri>model://robotx_light_buoy</uri>
