@@ -1,0 +1,22 @@
+[35m[1mScanning dependencies of target Hydrodynamics[0m
+[  7%] [32mBuilding CXX object CMakeFiles/Hydrodynamics.dir/src/Geometry.cc.o[0m
+[ 14%] [32mBuilding CXX object CMakeFiles/Hydrodynamics.dir/src/Gazebo.cc.o[0m
+[ 21%] [32mBuilding CXX object CMakeFiles/Hydrodynamics.dir/src/PhysicalConstants.cc.o[0m
+[ 28%] [32mBuilding CXX object CMakeFiles/Hydrodynamics.dir/src/Physics.cc.o[0m
+[ 35%] [32mBuilding CXX object CMakeFiles/Hydrodynamics.dir/src/Utilities.cc.o[0m
+[ 42%] [32mBuilding CXX object CMakeFiles/Hydrodynamics.dir/src/Wavefield.cc.o[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/Hydrodynamics.dir/src/WavefieldEntity.cc.o[0m
+[ 57%] [32m[1mLinking CXX shared library /home/sinloops/catkin_ws/devel/.private/wave_gazebo_plugins/lib/libHydrodynamics.so[0m
+[ 57%] Built target Hydrodynamics
+[35m[1mScanning dependencies of target WavefieldVisualPlugin[0m
+[35m[1mScanning dependencies of target WavefieldModelPlugin[0m
+[ 64%] [32mBuilding CXX object CMakeFiles/WavefieldVisualPlugin.dir/src/WavefieldVisualPlugin.cc.o[0m
+[ 71%] [32mBuilding CXX object CMakeFiles/WavefieldModelPlugin.dir/src/WavefieldModelPlugin.cc.o[0m
+[ 78%] [32m[1mLinking CXX shared library /home/sinloops/catkin_ws/devel/.private/wave_gazebo_plugins/lib/libWavefieldModelPlugin.so[0m
+[ 78%] Built target WavefieldModelPlugin
+[35m[1mScanning dependencies of target wavegauge_plugin[0m
+[ 85%] [32mBuilding CXX object CMakeFiles/wavegauge_plugin.dir/src/wavegauge_plugin.cc.o[0m
+[ 92%] [32m[1mLinking CXX shared library /home/sinloops/catkin_ws/devel/.private/wave_gazebo_plugins/lib/libWavefieldVisualPlugin.so[0m
+[ 92%] Built target WavefieldVisualPlugin
+[100%] [32m[1mLinking CXX shared library /home/sinloops/catkin_ws/devel/.private/wave_gazebo_plugins/lib/libwavegauge_plugin.so[0m
+[100%] Built target wavegauge_plugin

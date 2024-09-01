@@ -1,0 +1,5 @@
+Symlinking /home/sinloops/catkin_ws/devel/lib/pkgconfig/jackal_velodyne.pc
+Symlinking /home/sinloops/catkin_ws/devel/lib/jackal_velodyne/get_set_robot_position
+Symlinking /home/sinloops/catkin_ws/devel/lib/jackal_velodyne/tf_publisher
+Symlinking /home/sinloops/catkin_ws/devel/share/jackal_velodyne/cmake/jackal_velodyneConfig.cmake
+Symlinking /home/sinloops/catkin_ws/devel/share/jackal_velodyne/cmake/jackal_velodyneConfig-version.cmake

@@ -1,0 +1,12 @@
+[35m[1mScanning dependencies of target cora_description__xacro_auto_generate_to_devel_space_[0m
+[35m[1mScanning dependencies of target cora_description__xacro_auto_generate[0m
+[ 50%] [34m[1mxacro: generating urdf/cora.urdf from urdf/cora.urdf.xacro[0m
+[ 50%] [34m[1mcreating dir /home/sinloops/catkin_ws/devel/.private/cora_description/share/cora_description/urdf[0m
+[ 75%] [34m[1mxacro: generating urdf/cora.urdf from urdf/cora.urdf.xacro[0m
+
+
+[100%] [34m[1mCopying to devel space: /home/sinloops/catkin_ws/devel/.private/cora_description/share/cora_description/urdf/cora.urdf[0m
+[100%] Built target cora_description__xacro_auto_generate
+[100%] Built target cora_description__xacro_auto_generate_to_devel_space_
+[35m[1mScanning dependencies of target cora_description_xacro_generated_to_devel_space_[0m
+[100%] Built target cora_description_xacro_generated_to_devel_space_

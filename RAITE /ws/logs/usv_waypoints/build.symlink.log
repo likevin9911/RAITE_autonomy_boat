@@ -1,0 +1,4 @@
+Symlinking /home/sinloops/catkin_ws/devel/lib/pkgconfig/usv_waypoints.pc
+Symlinking /home/sinloops/catkin_ws/devel/lib/usv_waypoints/wamv_waypoint_follower
+Symlinking /home/sinloops/catkin_ws/devel/share/usv_waypoints/cmake/usv_waypointsConfig.cmake
+Symlinking /home/sinloops/catkin_ws/devel/share/usv_waypoints/cmake/usv_waypointsConfig-version.cmake

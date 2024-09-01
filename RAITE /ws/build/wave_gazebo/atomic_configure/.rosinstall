@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/sinloops/catkin_ws/devel/.private/wave_gazebo/setup.sh

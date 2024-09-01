@@ -1,0 +1,9 @@
+Symlinking /home/sinloops/catkin_ws/devel/lib/libsrc_costmap.so
+Symlinking /home/sinloops/catkin_ws/devel/lib/libsrc_navigation.so
+Symlinking /home/sinloops/catkin_ws/devel/lib/libsrc_frontier_search.so
+Symlinking /home/sinloops/catkin_ws/devel/lib/pkgconfig/autonomy_boat.pc
+Symlinking /home/sinloops/catkin_ws/devel/lib/autonomy_boat/jackal_explore_node
+Symlinking /home/sinloops/catkin_ws/devel/lib/autonomy_boat/detection
+Symlinking /home/sinloops/catkin_ws/devel/lib/autonomy_boat/cmake.lock
+Symlinking /home/sinloops/catkin_ws/devel/share/autonomy_boat/cmake/autonomy_boatConfig.cmake
+Symlinking /home/sinloops/catkin_ws/devel/share/autonomy_boat/cmake/autonomy_boatConfig-version.cmake

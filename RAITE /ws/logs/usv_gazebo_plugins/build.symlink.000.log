@@ -1,0 +1,9 @@
+Symlinking /home/sinloops/catkin_ws/devel/lib/libusv_gazebo_dynamics_plugin.so
+Symlinking /home/sinloops/catkin_ws/devel/lib/libusv_gazebo_wind_plugin.so
+Symlinking /home/sinloops/catkin_ws/devel/lib/libbuoyancy_gazebo_plugin.so
+Symlinking /home/sinloops/catkin_ws/devel/lib/libusv_gazebo_thrust_plugin.so
+Symlinking /home/sinloops/catkin_ws/devel/lib/libusv_gazebo_acoustic_pinger_plugin.so
+Symlinking /home/sinloops/catkin_ws/devel/lib/pkgconfig/usv_gazebo_plugins.pc
+Symlinking /home/sinloops/catkin_ws/devel/share/usv_gazebo_plugins/cmake/usv_gazebo_pluginsConfig-version.cmake
+Symlinking /home/sinloops/catkin_ws/devel/share/usv_gazebo_plugins/cmake/usv_gazebo_pluginsConfig.cmake
+Symlinking /home/sinloops/catkin_ws/devel/share/usv_gazebo_plugins/worlds/buoyancy_plugin_demo.world

@@ -1,0 +1,6 @@
+autonomy_boat_sim/usv_vrx/usv_navigation
+/home/sinloops/catkin_ws/devel/.private/usv_navigation/cmake.lock /home/sinloops/catkin_ws/devel/./cmake.lock
+/home/sinloops/catkin_ws/devel/.private/usv_navigation/lib/pkgconfig/usv_navigation.pc /home/sinloops/catkin_ws/devel/lib/pkgconfig/usv_navigation.pc
+/home/sinloops/catkin_ws/devel/.private/usv_navigation/lib/usv_navigation/mapping /home/sinloops/catkin_ws/devel/lib/usv_navigation/mapping
+/home/sinloops/catkin_ws/devel/.private/usv_navigation/share/usv_navigation/cmake/usv_navigationConfig-version.cmake /home/sinloops/catkin_ws/devel/share/usv_navigation/cmake/usv_navigationConfig-version.cmake
+/home/sinloops/catkin_ws/devel/.private/usv_navigation/share/usv_navigation/cmake/usv_navigationConfig.cmake /home/sinloops/catkin_ws/devel/share/usv_navigation/cmake/usv_navigationConfig.cmake

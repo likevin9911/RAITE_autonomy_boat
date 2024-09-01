@@ -1,0 +1,4 @@
+Symlinking /home/sinloops/catkin_ws/devel/lib/pkgconfig/usv_navigation.pc
+Symlinking /home/sinloops/catkin_ws/devel/lib/usv_navigation/mapping
+Symlinking /home/sinloops/catkin_ws/devel/share/usv_navigation/cmake/usv_navigationConfig-version.cmake
+Symlinking /home/sinloops/catkin_ws/devel/share/usv_navigation/cmake/usv_navigationConfig.cmake

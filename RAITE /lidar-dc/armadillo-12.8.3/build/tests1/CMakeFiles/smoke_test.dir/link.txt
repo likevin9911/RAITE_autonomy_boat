@@ -1,0 +1,1 @@
+/usr/bin/c++   -O2  -rdynamic CMakeFiles/smoke_test.dir/smoke_test.cpp.o  -o smoke_test  -Wl,-rpath,/home/sinloops/lidar_camera/armadillo-12.8.3/build ../libarmadillo.so.12.8.3 -lblas -llapack -larpack -lsuperlu 

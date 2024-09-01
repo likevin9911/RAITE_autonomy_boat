@@ -1,0 +1,4 @@
+Symlinking /home/sinloops/catkin_ws/devel/lib/pkgconfig/usv_control.pc
+Symlinking /home/sinloops/catkin_ws/devel/lib/usv_control/wamv_course_controller
+Symlinking /home/sinloops/catkin_ws/devel/share/usv_control/cmake/usv_controlConfig-version.cmake
+Symlinking /home/sinloops/catkin_ws/devel/share/usv_control/cmake/usv_controlConfig.cmake

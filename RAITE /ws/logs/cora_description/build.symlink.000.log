@@ -1,0 +1,4 @@
+Symlinking /home/sinloops/catkin_ws/devel/lib/pkgconfig/cora_description.pc
+Symlinking /home/sinloops/catkin_ws/devel/share/cora_description/cmake/cora_descriptionConfig-version.cmake
+Symlinking /home/sinloops/catkin_ws/devel/share/cora_description/cmake/cora_descriptionConfig.cmake
+Symlinking /home/sinloops/catkin_ws/devel/share/cora_description/urdf/cora.urdf

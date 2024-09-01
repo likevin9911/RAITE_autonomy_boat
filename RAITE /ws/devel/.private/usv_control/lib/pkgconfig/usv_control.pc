@@ -1,0 +1,8 @@
+prefix=/home/sinloops/catkin_ws/devel/.private/usv_control
+
+Name: usv_control
+Description: Description of usv_control
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

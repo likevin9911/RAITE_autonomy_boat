@@ -1,0 +1,12 @@
+[35m[1mScanning dependencies of target wamv_gazebo__xacro_auto_generate[0m
+[35m[1mScanning dependencies of target wamv_gazebo__xacro_auto_generate_to_devel_space_[0m
+[ 50%] [34m[1mcreating dir /home/sinloops/catkin_ws/devel/.private/wamv_gazebo/share/wamv_gazebo/urdf[0m
+[ 50%] [34m[1mxacro: generating urdf/wamv_gazebo.urdf from urdf/wamv_gazebo.urdf.xacro[0m
+[ 75%] [34m[1mxacro: generating urdf/wamv_gazebo.urdf from urdf/wamv_gazebo.urdf.xacro[0m
+
+
+[100%] [34m[1mCopying to devel space: /home/sinloops/catkin_ws/devel/.private/wamv_gazebo/share/wamv_gazebo/urdf/wamv_gazebo.urdf[0m
+[100%] Built target wamv_gazebo__xacro_auto_generate
+[100%] Built target wamv_gazebo__xacro_auto_generate_to_devel_space_
+[35m[1mScanning dependencies of target wamv_gazebo_xacro_generated_to_devel_space_[0m
+[100%] Built target wamv_gazebo_xacro_generated_to_devel_space_

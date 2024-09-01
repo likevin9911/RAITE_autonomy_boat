@@ -1,0 +1,13 @@
+Symlinking /home/sinloops/catkin_ws/devel/lib/pkgconfig/vrx_2019.pc
+Symlinking /home/sinloops/catkin_ws/devel/share/vrx_2019/cmake/vrx_2019Config-version.cmake
+Symlinking /home/sinloops/catkin_ws/devel/share/vrx_2019/cmake/vrx_2019Config.cmake
+Symlinking /home/sinloops/catkin_ws/devel/share/vrx_2019/worlds/dock.world
+Symlinking /home/sinloops/catkin_ws/devel/share/vrx_2019/worlds/wind_test.world
+Symlinking /home/sinloops/catkin_ws/devel/share/vrx_2019/worlds/navigation_task.world
+Symlinking /home/sinloops/catkin_ws/devel/share/vrx_2019/worlds/scan_and_dock.world
+Symlinking /home/sinloops/catkin_ws/devel/share/vrx_2019/worlds/sandisland.world
+Symlinking /home/sinloops/catkin_ws/devel/share/vrx_2019/worlds/stationkeeping_task.world
+Symlinking /home/sinloops/catkin_ws/devel/share/vrx_2019/worlds/wayfinding_task.world
+Symlinking /home/sinloops/catkin_ws/devel/share/vrx_2019/worlds/ocean.world
+Symlinking /home/sinloops/catkin_ws/devel/share/vrx_2019/worlds/example_course.world
+Symlinking /home/sinloops/catkin_ws/devel/share/vrx_2019/worlds/perception_task.world

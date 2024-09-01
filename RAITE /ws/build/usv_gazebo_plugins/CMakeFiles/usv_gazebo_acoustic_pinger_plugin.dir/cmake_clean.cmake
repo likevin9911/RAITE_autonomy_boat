@@ -1,0 +1,10 @@
+file(REMOVE_RECURSE
+  "/home/sinloops/catkin_ws/devel/.private/usv_gazebo_plugins/lib/libusv_gazebo_acoustic_pinger_plugin.pdb"
+  "/home/sinloops/catkin_ws/devel/.private/usv_gazebo_plugins/lib/libusv_gazebo_acoustic_pinger_plugin.so"
+  "CMakeFiles/usv_gazebo_acoustic_pinger_plugin.dir/src/acoustic_pinger_plugin.cc.o"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/usv_gazebo_acoustic_pinger_plugin.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

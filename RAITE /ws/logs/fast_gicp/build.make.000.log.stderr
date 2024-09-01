@@ -1,0 +1,60 @@
+In file included from [01m[K/usr/include/boost/detail/endian.hpp:9[m[K,
+                 from [01m[K/usr/local/include/pcl-1.9/pcl/PCLPointCloud2.h:11[m[K,
+                 from [01m[K/usr/local/include/pcl-1.9/pcl/conversions.h:48[m[K,
+                 from [01m[K/usr/local/include/pcl-1.9/pcl/common/concatenate.h:41[m[K,
+                 from [01m[K/usr/local/include/pcl-1.9/pcl/search/search.h:44[m[K,
+                 from [01m[K/home/sinloops/catkin_ws/src/fast_gicp/include/fast_gicp/gicp/fast_gicp.hpp:9[m[K,
+                 from [01m[K/home/sinloops/catkin_ws/src/fast_gicp/src/fast_gicp/gicp/fast_gicp.cpp:1[m[K:
+[01m[K/usr/include/boost/predef/detail/endian_compat.h:11:161:[m[K [01;36m[Knote: [m[K#pragma message: The use of BOOST_*_ENDIAN and BOOST_BYTE_ORDER is deprecated. Please include <boost/predef/other/endian.h> and use BOOST_ENDIAN_*_BYTE instead
+   11 | #pragma message("The use of BOOST_*_ENDIAN and BOOST_BYTE_ORDER is deprecated. Please include <boost/predef/other/endian.h> and use BOOST_ENDIAN_*_BYTE instead"[01;36m[K)[m[K
+      |                                                                                                                                                                 [01;36m[K^[m[K
+In file included from [01m[K/usr/include/boost/detail/endian.hpp:9[m[K,
+                 from [01m[K/usr/local/include/pcl-1.9/pcl/PCLPointCloud2.h:11[m[K,
+                 from [01m[K/usr/local/include/pcl-1.9/pcl/conversions.h:48[m[K,
+                 from [01m[K/usr/local/include/pcl-1.9/pcl/common/concatenate.h:41[m[K,
+                 from [01m[K/usr/local/include/pcl-1.9/pcl/search/search.h:44[m[K,
+                 from [01m[K/usr/local/include/pcl-1.9/pcl/search/kdtree.h:43[m[K,
+                 from [01m[K/home/sinloops/catkin_ws/src/fast_gicp/include/fast_gicp/gicp/fast_gicp_st.hpp:9[m[K,
+                 from [01m[K/home/sinloops/catkin_ws/src/fast_gicp/src/fast_gicp/gicp/fast_gicp_st.cpp:1[m[K:
+[01m[K/usr/include/boost/predef/detail/endian_compat.h:11:161:[m[K [01;36m[Knote: [m[K#pragma message: The use of BOOST_*_ENDIAN and BOOST_BYTE_ORDER is deprecated. Please include <boost/predef/other/endian.h> and use BOOST_ENDIAN_*_BYTE instead
+   11 | #pragma message("The use of BOOST_*_ENDIAN and BOOST_BYTE_ORDER is deprecated. Please include <boost/predef/other/endian.h> and use BOOST_ENDIAN_*_BYTE instead"[01;36m[K)[m[K
+      |                                                                                                                                                                 [01;36m[K^[m[K
+In file included from [01m[K/usr/include/boost/detail/endian.hpp:9[m[K,
+                 from [01m[K/usr/local/include/pcl-1.9/pcl/PCLPointCloud2.h:11[m[K,
+                 from [01m[K/usr/local/include/pcl-1.9/pcl/pcl_base.h:55[m[K,
+                 from [01m[K/usr/local/include/pcl-1.9/pcl/registration/registration.h:45[m[K,
+                 from [01m[K/home/sinloops/catkin_ws/src/fast_gicp/include/fast_gicp/gicp/lsq_registration.hpp:9[m[K,
+                 from [01m[K/home/sinloops/catkin_ws/src/fast_gicp/src/fast_gicp/gicp/lsq_registration.cpp:1[m[K:
+[01m[K/usr/include/boost/predef/detail/endian_compat.h:11:161:[m[K [01;36m[Knote: [m[K#pragma message: The use of BOOST_*_ENDIAN and BOOST_BYTE_ORDER is deprecated. Please include <boost/predef/other/endian.h> and use BOOST_ENDIAN_*_BYTE instead
+   11 | #pragma message("The use of BOOST_*_ENDIAN and BOOST_BYTE_ORDER is deprecated. Please include <boost/predef/other/endian.h> and use BOOST_ENDIAN_*_BYTE instead"[01;36m[K)[m[K
+      |                                                                                                                                                                 [01;36m[K^[m[K
+In file included from [01m[K/usr/include/boost/detail/endian.hpp:9[m[K,
+                 from [01m[K/usr/local/include/pcl-1.9/pcl/PCLPointCloud2.h:11[m[K,
+                 from [01m[K/usr/local/include/pcl-1.9/pcl/conversions.h:48[m[K,
+                 from [01m[K/usr/local/include/pcl-1.9/pcl/common/concatenate.h:41[m[K,
+                 from [01m[K/usr/local/include/pcl-1.9/pcl/search/search.h:44[m[K,
+                 from [01m[K/usr/local/include/pcl-1.9/pcl/search/kdtree.h:43[m[K,
+                 from [01m[K/home/sinloops/catkin_ws/src/fast_gicp/include/fast_gicp/gicp/fast_vgicp.hpp:11[m[K,
+                 from [01m[K/home/sinloops/catkin_ws/src/fast_gicp/src/fast_gicp/gicp/fast_vgicp.cpp:1[m[K:
+[01m[K/usr/include/boost/predef/detail/endian_compat.h:11:161:[m[K [01;36m[Knote: [m[K#pragma message: The use of BOOST_*_ENDIAN and BOOST_BYTE_ORDER is deprecated. Please include <boost/predef/other/endian.h> and use BOOST_ENDIAN_*_BYTE instead
+   11 | #pragma message("The use of BOOST_*_ENDIAN and BOOST_BYTE_ORDER is deprecated. Please include <boost/predef/other/endian.h> and use BOOST_ENDIAN_*_BYTE instead"[01;36m[K)[m[K
+      |                                                                                                                                                                 [01;36m[K^[m[K
+In file included from [01m[K/usr/include/boost/detail/endian.hpp:9[m[K,
+                 from [01m[K/usr/local/include/pcl-1.9/pcl/PCLPointCloud2.h:11[m[K,
+                 from [01m[K/usr/local/include/pcl-1.9/pcl/pcl_base.h:55[m[K,
+                 from [01m[K/usr/local/include/pcl-1.9/pcl/common/io.h:45[m[K,
+                 from [01m[K/usr/local/include/pcl-1.9/pcl/io/file_io.h:42[m[K,
+                 from [01m[K/usr/local/include/pcl-1.9/pcl/io/pcd_io.h:44[m[K,
+                 from [01m[K/home/sinloops/catkin_ws/src/fast_gicp/src/align.cpp:4[m[K:
+[01m[K/usr/include/boost/predef/detail/endian_compat.h:11:161:[m[K [01;36m[Knote: [m[K#pragma message: The use of BOOST_*_ENDIAN and BOOST_BYTE_ORDER is deprecated. Please include <boost/predef/other/endian.h> and use BOOST_ENDIAN_*_BYTE instead
+   11 | #pragma message("The use of BOOST_*_ENDIAN and BOOST_BYTE_ORDER is deprecated. Please include <boost/predef/other/endian.h> and use BOOST_ENDIAN_*_BYTE instead"[01;36m[K)[m[K
+      |                                                                                                                                                                 [01;36m[K^[m[K
+In file included from [01m[K/usr/include/boost/detail/endian.hpp:9[m[K,
+                 from [01m[K/usr/local/include/pcl-1.9/pcl/PCLPointCloud2.h:11[m[K,
+                 from [01m[K/usr/local/include/pcl-1.9/pcl/pcl_base.h:55[m[K,
+                 from [01m[K/usr/local/include/pcl-1.9/pcl/filters/filter.h:43[m[K,
+                 from [01m[K/usr/local/include/pcl-1.9/pcl/filters/approximate_voxel_grid.h:42[m[K,
+                 from [01m[K/home/sinloops/catkin_ws/src/fast_gicp/src/kitti.cpp:9[m[K:
+[01m[K/usr/include/boost/predef/detail/endian_compat.h:11:161:[m[K [01;36m[Knote: [m[K#pragma message: The use of BOOST_*_ENDIAN and BOOST_BYTE_ORDER is deprecated. Please include <boost/predef/other/endian.h> and use BOOST_ENDIAN_*_BYTE instead
+   11 | #pragma message("The use of BOOST_*_ENDIAN and BOOST_BYTE_ORDER is deprecated. Please include <boost/predef/other/endian.h> and use BOOST_ENDIAN_*_BYTE instead"[01;36m[K)[m[K
+      |                                                                                                                                                                 [01;36m[K^[m[K

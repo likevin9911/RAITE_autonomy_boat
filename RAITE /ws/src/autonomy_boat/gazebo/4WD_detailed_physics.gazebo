@@ -1,0 +1,55 @@
+<?xml version="1.0" ?>
+<robot name="4WD" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+
+<gazebo reference="base_link">
+  <mu1>0</mu1>
+  <mu2>0</mu2>
+  <selfCollide>true</selfCollide>
+  <gravity>true</gravity>
+</gazebo>
+
+<gazebo reference="brt_1">
+  <mu1>800</mu1>
+  <mu2>800</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="frt_1">
+  <mu1>10</mu1>
+  <mu2>10</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="flt_1">
+  <mu1>10</mu1>
+  <mu2>10</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="blt_1">
+  <mu1>800</mu1>
+  <mu2>800</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="lidar_1">
+  <mu1>0</mu1>
+  <mu2>0</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="lidar_base_1">
+  <mu1>0</mu1>
+  <mu2>0</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+
+<gazebo reference="camera">
+  <mu1>0</mu1>
+  <mu2>0</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+</robot>

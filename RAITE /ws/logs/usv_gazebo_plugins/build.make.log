@@ -1,0 +1,36 @@
+[35m[1mScanning dependencies of target usv_gazebo_plugins__xacro_auto_generate[0m
+[35m[1mScanning dependencies of target buoyancy_gazebo_plugin[0m
+[35m[1mScanning dependencies of target usv_gazebo_wind_plugin[0m
+[35m[1mScanning dependencies of target usv_msgs_generate_messages_cpp[0m
+[35m[1mScanning dependencies of target usv_gazebo_plugins__xacro_auto_generate_to_devel_space_[0m
+[35m[1mScanning dependencies of target usv_gazebo_thrust_plugin[0m
+[35m[1mScanning dependencies of target usv_gazebo_dynamics_plugin[0m
+[  0%] Built target usv_msgs_generate_messages_cpp
+[  6%] [34m[1mcreating dir /home/sinloops/catkin_ws/devel/.private/usv_gazebo_plugins/share/usv_gazebo_plugins/worlds[0m
+[ 12%] [34m[1mxacro: generating worlds/buoyancy_plugin_demo.world from worlds/buoyancy_plugin_demo.world.xacro[0m
+[ 18%] [34m[1mxacro: generating worlds/buoyancy_plugin_demo.world from worlds/buoyancy_plugin_demo.world.xacro[0m
+[35m[1mScanning dependencies of target usv_gazebo_acoustic_pinger_plugin[0m
+[ 25%] [32mBuilding CXX object CMakeFiles/usv_gazebo_wind_plugin.dir/src/usv_gazebo_wind_plugin.cc.o[0m
+[ 31%] [32mBuilding CXX object CMakeFiles/usv_gazebo_thrust_plugin.dir/src/usv_gazebo_thrust_plugin.cc.o[0m
+[ 37%] [32mBuilding CXX object CMakeFiles/buoyancy_gazebo_plugin.dir/src/buoyancy_gazebo_plugin.cc.o[0m
+[ 43%] [32mBuilding CXX object CMakeFiles/buoyancy_gazebo_plugin.dir/src/shape_volume.cc.o[0m
+
+[ 50%] [32mBuilding CXX object CMakeFiles/usv_gazebo_dynamics_plugin.dir/src/usv_gazebo_dynamics_plugin.cc.o[0m
+[ 56%] [32mBuilding CXX object CMakeFiles/buoyancy_gazebo_plugin.dir/src/polyhedron_volume.cc.o[0m
+
+[ 62%] [32mBuilding CXX object CMakeFiles/usv_gazebo_acoustic_pinger_plugin.dir/src/acoustic_pinger_plugin.cc.o[0m
+[ 62%] Built target usv_gazebo_plugins__xacro_auto_generate
+[ 68%] [34m[1mCopying to devel space: /home/sinloops/catkin_ws/devel/.private/usv_gazebo_plugins/share/usv_gazebo_plugins/worlds/buoyancy_plugin_demo.world[0m
+[ 68%] Built target usv_gazebo_plugins__xacro_auto_generate_to_devel_space_
+[35m[1mScanning dependencies of target usv_gazebo_plugins_xacro_generated_to_devel_space_[0m
+[ 68%] Built target usv_gazebo_plugins_xacro_generated_to_devel_space_
+[ 75%] [32m[1mLinking CXX shared library /home/sinloops/catkin_ws/devel/.private/usv_gazebo_plugins/lib/libusv_gazebo_thrust_plugin.so[0m
+[ 75%] Built target usv_gazebo_thrust_plugin
+[ 81%] [32m[1mLinking CXX shared library /home/sinloops/catkin_ws/devel/.private/usv_gazebo_plugins/lib/libbuoyancy_gazebo_plugin.so[0m
+[ 87%] [32m[1mLinking CXX shared library /home/sinloops/catkin_ws/devel/.private/usv_gazebo_plugins/lib/libusv_gazebo_wind_plugin.so[0m
+[ 93%] [32m[1mLinking CXX shared library /home/sinloops/catkin_ws/devel/.private/usv_gazebo_plugins/lib/libusv_gazebo_acoustic_pinger_plugin.so[0m
+[ 93%] Built target buoyancy_gazebo_plugin
+[ 93%] Built target usv_gazebo_wind_plugin
+[ 93%] Built target usv_gazebo_acoustic_pinger_plugin
+[100%] [32m[1mLinking CXX shared library /home/sinloops/catkin_ws/devel/.private/usv_gazebo_plugins/lib/libusv_gazebo_dynamics_plugin.so[0m
+[100%] Built target usv_gazebo_dynamics_plugin

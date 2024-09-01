@@ -1,0 +1,381 @@
+[35m[1mScanning dependencies of target geographic_msgs_generate_messages_lisp[0m
+[35m[1mScanning dependencies of target actionlib_msgs_generate_messages_cpp[0m
+[35m[1mScanning dependencies of target tf_generate_messages_lisp[0m
+[35m[1mScanning dependencies of target actionlib_generate_messages_eus[0m
+[35m[1mScanning dependencies of target tf_generate_messages_nodejs[0m
+[35m[1mScanning dependencies of target geographic_msgs_generate_messages_cpp[0m
+[35m[1mScanning dependencies of target rosgraph_msgs_generate_messages_cpp[0m
+[35m[1mScanning dependencies of target std_srvs_generate_messages_eus[0m
+[35m[1mScanning dependencies of target trajectory_msgs_generate_messages_py[0m
+[35m[1mScanning dependencies of target geometry_msgs_generate_messages_py[0m
+[35m[1mScanning dependencies of target actionlib_generate_messages_py[0m
+[35m[1mScanning dependencies of target actionlib_msgs_generate_messages_nodejs[0m
+[35m[1mScanning dependencies of target actionlib_generate_messages_cpp[0m
+[35m[1mScanning dependencies of target dynamic_reconfigure_generate_messages_eus[0m
+[35m[1mScanning dependencies of target rosgraph_msgs_generate_messages_nodejs[0m
+[35m[1mScanning dependencies of target gazebo_ros_gencfg[0m
+[35m[1mScanning dependencies of target geometry_msgs_generate_messages_cpp[0m
+[35m[1mScanning dependencies of target rosgraph_msgs_generate_messages_eus[0m
+[35m[1mScanning dependencies of target geometry_msgs_generate_messages_nodejs[0m
+[35m[1mScanning dependencies of target tf_generate_messages_py[0m
+[35m[1mScanning dependencies of target gazebo_msgs_generate_messages_eus[0m
+[35m[1mScanning dependencies of target sensor_msgs_generate_messages_eus[0m
+[35m[1mScanning dependencies of target actionlib_generate_messages_nodejs[0m
+[35m[1mScanning dependencies of target sensor_msgs_generate_messages_cpp[0m
+[35m[1mScanning dependencies of target std_srvs_generate_messages_py[0m
+[35m[1mScanning dependencies of target actionlib_msgs_generate_messages_lisp[0m
+[35m[1mScanning dependencies of target geographic_msgs_generate_messages_eus[0m
+[35m[1mScanning dependencies of target uuid_msgs_generate_messages_lisp[0m
+[  0%] Built target actionlib_msgs_generate_messages_cpp
+[35m[1mScanning dependencies of target std_srvs_generate_messages_lisp[0m
+[35m[1mScanning dependencies of target geographic_msgs_generate_messages_py[0m
+[35m[1mScanning dependencies of target actionlib_generate_messages_lisp[0m
+[35m[1mScanning dependencies of target std_msgs_generate_messages_eus[0m
+[  0%] Built target actionlib_generate_messages_eus
+[  0%] Built target geographic_msgs_generate_messages_lisp
+[  0%] Built target rosgraph_msgs_generate_messages_cpp
+[  0%] Built target actionlib_generate_messages_cpp
+[  0%] Built target actionlib_generate_messages_py
+[  0%] Built target trajectory_msgs_generate_messages_py
+[  0%] Built target tf_generate_messages_nodejs
+[  0%] Built target tf_generate_messages_lisp
+[  0%] Built target std_srvs_generate_messages_eus
+[  0%] Built target rosgraph_msgs_generate_messages_eus
+[  0%] Built target actionlib_msgs_generate_messages_nodejs
+[  0%] Built target geometry_msgs_generate_messages_py
+[  0%] Built target dynamic_reconfigure_generate_messages_eus
+[  0%] Built target rosgraph_msgs_generate_messages_nodejs
+[  0%] Built target geographic_msgs_generate_messages_cpp
+[  0%] Built target actionlib_msgs_generate_messages_lisp
+[  0%] Built target tf_generate_messages_py
+[  0%] Built target geographic_msgs_generate_messages_eus
+[  0%] Built target geometry_msgs_generate_messages_cpp
+[  0%] Built target gazebo_ros_gencfg
+[  0%] Built target geometry_msgs_generate_messages_nodejs
+[  0%] Built target sensor_msgs_generate_messages_eus
+[  0%] Built target gazebo_msgs_generate_messages_eus
+[  0%] Built target uuid_msgs_generate_messages_lisp
+[  0%] Built target sensor_msgs_generate_messages_cpp
+[  0%] Built target std_msgs_generate_messages_eus
+[  0%] Built target actionlib_generate_messages_nodejs
+[  0%] Built target actionlib_generate_messages_lisp
+[  0%] Built target std_srvs_generate_messages_py
+[  0%] Built target geographic_msgs_generate_messages_py
+[  0%] Built target std_srvs_generate_messages_lisp
+[35m[1mScanning dependencies of target roscpp_generate_messages_lisp[0m
+[35m[1mScanning dependencies of target tf_generate_messages_eus[0m
+[35m[1mScanning dependencies of target geographic_msgs_generate_messages_nodejs[0m
+[35m[1mScanning dependencies of target std_srvs_generate_messages_cpp[0m
+[35m[1mScanning dependencies of target trajectory_msgs_generate_messages_eus[0m
+[35m[1mScanning dependencies of target roscpp_generate_messages_nodejs[0m
+[35m[1mScanning dependencies of target tf2_msgs_generate_messages_eus[0m
+[35m[1mScanning dependencies of target geometry_msgs_generate_messages_lisp[0m
+[35m[1mScanning dependencies of target tf_generate_messages_cpp[0m
+[35m[1mScanning dependencies of target geometry_msgs_generate_messages_eus[0m
+[35m[1mScanning dependencies of target actionlib_msgs_generate_messages_eus[0m
+[35m[1mScanning dependencies of target std_msgs_generate_messages_cpp[0m
+[35m[1mScanning dependencies of target std_msgs_generate_messages_py[0m
+[35m[1mScanning dependencies of target gazebo_msgs_generate_messages_py[0m
+[35m[1mScanning dependencies of target roscpp_generate_messages_cpp[0m
+[35m[1mScanning dependencies of target std_msgs_generate_messages_nodejs[0m
+[35m[1mScanning dependencies of target std_msgs_generate_messages_lisp[0m
+[35m[1mScanning dependencies of target uuid_msgs_generate_messages_eus[0m
+[35m[1mScanning dependencies of target dynamic_reconfigure_generate_messages_py[0m
+[35m[1mScanning dependencies of target uuid_msgs_generate_messages_nodejs[0m
+[35m[1mScanning dependencies of target uuid_msgs_generate_messages_cpp[0m
+[35m[1mScanning dependencies of target roscpp_generate_messages_eus[0m
+[35m[1mScanning dependencies of target _vrx_gazebo_generate_messages_check_deps_Contact[0m
+[35m[1mScanning dependencies of target _vrx_gazebo_generate_messages_check_deps_Task[0m
+[35m[1mScanning dependencies of target tf2_msgs_generate_messages_nodejs[0m
+[35m[1mScanning dependencies of target tf2_msgs_generate_messages_lisp[0m
+[35m[1mScanning dependencies of target sensor_msgs_generate_messages_lisp[0m
+[35m[1mScanning dependencies of target tf2_msgs_generate_messages_cpp[0m
+[35m[1mScanning dependencies of target _vrx_gazebo_generate_messages_check_deps_BallShooter[0m
+[35m[1mScanning dependencies of target dynamic_reconfigure_generate_messages_lisp[0m
+[35m[1mScanning dependencies of target _vrx_gazebo_generate_messages_check_deps_ColorSequence[0m
+[35m[1mScanning dependencies of target uuid_msgs_generate_messages_py[0m
+[  0%] Built target roscpp_generate_messages_lisp
+[  0%] Built target geographic_msgs_generate_messages_nodejs
+[  0%] Built target tf_generate_messages_eus
+[  0%] Built target trajectory_msgs_generate_messages_eus
+[  0%] Built target std_srvs_generate_messages_cpp
+[  0%] Built target tf_generate_messages_cpp
+[  0%] Built target geometry_msgs_generate_messages_lisp
+[  0%] Built target roscpp_generate_messages_nodejs
+[  0%] Built target geometry_msgs_generate_messages_eus
+[  0%] Built target tf2_msgs_generate_messages_eus
+[  0%] Built target actionlib_msgs_generate_messages_eus
+[  0%] Built target roscpp_generate_messages_cpp
+[  0%] Built target gazebo_msgs_generate_messages_py
+[  0%] Built target std_msgs_generate_messages_cpp
+[  0%] Built target std_msgs_generate_messages_py
+[  0%] Built target std_msgs_generate_messages_nodejs
+[  0%] Built target uuid_msgs_generate_messages_cpp
+[  0%] Built target dynamic_reconfigure_generate_messages_py
+[  0%] Built target uuid_msgs_generate_messages_eus
+[  0%] Built target std_msgs_generate_messages_lisp
+[  0%] Built target uuid_msgs_generate_messages_nodejs
+[  0%] Built target dynamic_reconfigure_generate_messages_lisp
+[  0%] Built target tf2_msgs_generate_messages_nodejs
+[  0%] Built target sensor_msgs_generate_messages_lisp
+[  0%] Built target uuid_msgs_generate_messages_py
+[  0%] Built target roscpp_generate_messages_eus
+[  0%] Built target tf2_msgs_generate_messages_lisp
+[  0%] Built target tf2_msgs_generate_messages_cpp
+[35m[1mScanning dependencies of target dynamic_reconfigure_generate_messages_nodejs[0m
+[35m[1mScanning dependencies of target dynamic_reconfigure_generate_messages_cpp[0m
+[35m[1mScanning dependencies of target dynamic_reconfigure_gencfg[0m
+[35m[1mScanning dependencies of target tf2_msgs_generate_messages_py[0m
+[35m[1mScanning dependencies of target rosgraph_msgs_generate_messages_lisp[0m
+[35m[1mScanning dependencies of target gazebo_msgs_generate_messages_lisp[0m
+[35m[1mScanning dependencies of target gazebo_msgs_generate_messages_nodejs[0m
+[35m[1mScanning dependencies of target gazebo_msgs_generate_messages_cpp[0m
+[35m[1mScanning dependencies of target trajectory_msgs_generate_messages_lisp[0m
+[35m[1mScanning dependencies of target trajectory_msgs_generate_messages_cpp[0m
+[35m[1mScanning dependencies of target roscpp_generate_messages_py[0m
+[35m[1mScanning dependencies of target trajectory_msgs_generate_messages_nodejs[0m
+[35m[1mScanning dependencies of target sensor_msgs_generate_messages_py[0m
+[35m[1mScanning dependencies of target sensor_msgs_generate_messages_nodejs[0m
+[35m[1mScanning dependencies of target actionlib_msgs_generate_messages_py[0m
+[35m[1mScanning dependencies of target dock_placard_msgs_autogen[0m
+[35m[1mScanning dependencies of target std_srvs_generate_messages_nodejs[0m
+[35m[1mScanning dependencies of target dock_base_erb_generation[0m
+[35m[1mScanning dependencies of target light_buoy_colors_msgs_autogen[0m
+[35m[1mScanning dependencies of target rosgraph_msgs_generate_messages_py[0m
+[35m[1mScanning dependencies of target vrx_gazebo__xacro_auto_generate[0m
+[35m[1mScanning dependencies of target vrx_gazebo_generate_obstacle_course_buoys[0m
+[35m[1mScanning dependencies of target vrx_gazebo__xacro_auto_generate_to_devel_space_[0m
+[  0%] Built target dynamic_reconfigure_generate_messages_nodejs
+[  0%] Built target rosgraph_msgs_generate_messages_lisp
+[  0%] Built target dynamic_reconfigure_generate_messages_cpp
+[  0%] Built target dynamic_reconfigure_gencfg
+[  0%] Built target tf2_msgs_generate_messages_py
+[  0%] Built target gazebo_msgs_generate_messages_lisp
+[  2%] Built target gazebo_msgs_generate_messages_cpp
+[  2%] [34m[1mGenerating /home/sinloops/catkin_ws/src/autonomy_boat_sim/vrx/vrx_gazebo/models/robotx_2018_qualifying_avoid_obstacles_buoys/model.sdf[0m
+[  2%] Built target gazebo_msgs_generate_messages_nodejs
+[  2%] Built target trajectory_msgs_generate_messages_cpp
+[  3%] [34m[1mxacro: generating worlds/gymkhana.world from worlds/gymkhana.world.xacro[0m
+[  3%] [34m[1mRunning cpp protocol buffer compiler on light_buoy_colors.proto[0m
+[  2%] [34m[1mxacro: generating worlds/perception_task.world from worlds/perception_task.world.xacro[0m
+[  3%] Built target trajectory_msgs_generate_messages_nodejs
+[  3%] Built target trajectory_msgs_generate_messages_lisp
+[  3%] Built target sensor_msgs_generate_messages_py
+[  3%] [34m[1mxacro: generating worlds/gymkhana.world from worlds/gymkhana.world.xacro[0m
+[  3%] Built target roscpp_generate_messages_py
+[  3%] [34m[1mRunning cpp protocol buffer compiler on dock_placard.proto[0m
+[  3%] [34m[1mxacro: generating worlds/example_course.world from worlds/example_course.world.xacro[0m
+[  3%] Built target sensor_msgs_generate_messages_nodejs
+[  4%] [34m[1mxacro: generating worlds/example_course.world from worlds/example_course.world.xacro[0m
+[  5%] Built target actionlib_msgs_generate_messages_py
+[  5%] [34m[1mcreating dir /home/sinloops/catkin_ws/devel/.private/vrx_gazebo/share/vrx_gazebo/worlds[0m
+[  5%] Built target std_srvs_generate_messages_nodejs
+[  5%] Built target rosgraph_msgs_generate_messages_py
+[  8%] [34m[1mxacro: generating worlds/stationkeeping_task.world from worlds/stationkeeping_task.world.xacro[0m
+[  8%] [34m[1mxacro: generating worlds/perception_task.world from worlds/perception_task.world.xacro[0m
+[  8%] [34m[1mxacro: generating worlds/scan_dock_deliver.world from worlds/scan_dock_deliver.world.xacro[0m
+[ 12%] Built target dock_base_erb_generation
+[ 13%] [34m[1mxacro: generating worlds/sydneyregatta.world from worlds/sydneyregatta.world.xacro[0m
+[ 13%] [34m[1mxacro: generating worlds/stationkeeping_task.world from worlds/stationkeeping_task.world.xacro[0m
+[ 13%] Built target _vrx_gazebo_generate_messages_check_deps_Contact
+[ 15%] [34m[1mxacro: generating worlds/scan_dock_deliver.world from worlds/scan_dock_deliver.world.xacro[0m
+[ 15%] [34m[1mxacro: generating worlds/wayfinding_task.world from worlds/wayfinding_task.world.xacro[0m
+[ 15%] Built target _vrx_gazebo_generate_messages_check_deps_BallShooter
+[ 16%] [34m[1mxacro: generating worlds/sydneyregatta.world from worlds/sydneyregatta.world.xacro[0m
+[ 16%] Built target _vrx_gazebo_generate_messages_check_deps_Task
+[ 17%] [34m[1mxacro: generating worlds/wildlife_task.world from worlds/wildlife_task.world.xacro[0m
+[ 17%] [34m[1mxacro: generating worlds/wildlife_task.world from worlds/wildlife_task.world.xacro[0m
+[ 18%] Built target _vrx_gazebo_generate_messages_check_deps_ColorSequence
+[ 18%] [34m[1mxacro: generating worlds/wayfinding_task.world from worlds/wayfinding_task.world.xacro[0m
+[35m[1mScanning dependencies of target ball_shooter_plugin_autogen[0m
+[35m[1mScanning dependencies of target waypoint_markers_autogen[0m
+[35m[1mScanning dependencies of target dock_erb_generation[0m
+[35m[1mScanning dependencies of target vrx_gazebo_generate_messages_eus[0m
+[35m[1mScanning dependencies of target vrx_gazebo_generate_messages_lisp[0m
+[35m[1mScanning dependencies of target vrx_gazebo_generate_messages_cpp[0m
+[35m[1mScanning dependencies of target vrx_gazebo_generate_messages_nodejs[0m
+[35m[1mScanning dependencies of target vrx_gazebo_generate_messages_py[0m
+[ 18%] [34m[1mAutomatic MOC and UIC for target light_buoy_colors_msgs[0m
+[ 19%] [34m[1mAutomatic MOC and UIC for target dock_placard_msgs[0m
+[ 24%] Built target dock_erb_generation
+[ 24%] [34m[1mAutomatic MOC and UIC for target ball_shooter_plugin[0m
+[ 25%] [34m[1mAutomatic MOC and UIC for target waypoint_markers[0m
+[ 25%] [34m[1mGenerating EusLisp code from vrx_gazebo/Contact.msg[0m
+[ 26%] [34m[1mGenerating EusLisp code from vrx_gazebo/BallShooter.srv[0m
+[ 27%] [34m[1mGenerating EusLisp code from vrx_gazebo/Task.msg[0m
+[ 29%] [34m[1mGenerating EusLisp code from vrx_gazebo/ColorSequence.srv[0m
+[ 30%] [34m[1mGenerating Lisp code from vrx_gazebo/Task.msg[0m
+[ 30%] [34m[1mGenerating EusLisp manifest code for vrx_gazebo[0m
+[ 31%] [34m[1mGenerating Javascript code from vrx_gazebo/Task.msg[0m
+[ 32%] [34m[1mGenerating Lisp code from vrx_gazebo/Contact.msg[0m
+[ 32%] [34m[1mGenerating Python from MSG vrx_gazebo/Task[0m
+[ 33%] [34m[1mGenerating C++ code from vrx_gazebo/Task.msg[0m
+[ 33%] [34m[1mGenerating Lisp code from vrx_gazebo/ColorSequence.srv[0m
+[ 33%] Built target ball_shooter_plugin_autogen
+[ 33%] Built target dock_placard_msgs_autogen
+[ 33%] Built target waypoint_markers_autogen
+[ 33%] Built target light_buoy_colors_msgs_autogen
+[ 34%] [34m[1mGenerating C++ code from vrx_gazebo/Contact.msg[0m
+[ 36%] [34m[1mGenerating Python from MSG vrx_gazebo/Contact[0m
+[35m[1mScanning dependencies of target ball_shooter_plugin[0m
+[35m[1mScanning dependencies of target waypoint_markers[0m
+[ 37%] [34m[1mGenerating Lisp code from vrx_gazebo/BallShooter.srv[0m
+[ 37%] [34m[1mGenerating Javascript code from vrx_gazebo/Contact.msg[0m
+[ 38%] [34m[1mGenerating Python code from SRV vrx_gazebo/ColorSequence[0m
+[ 38%] [34m[1mGenerating C++ code from vrx_gazebo/ColorSequence.srv[0m
+[35m[1mScanning dependencies of target light_buoy_colors_msgs[0m
+[ 39%] [34m[1mGenerating Javascript code from vrx_gazebo/ColorSequence.srv[0m
+[ 40%] [34m[1mGenerating Javascript code from vrx_gazebo/BallShooter.srv[0m
+[ 40%] Built target vrx_gazebo_generate_obstacle_course_buoys
+[35m[1mScanning dependencies of target dock_placard_msgs[0m
+[ 40%] [32mBuilding CXX object msgs/CMakeFiles/light_buoy_colors_msgs.dir/light_buoy_colors_msgs_autogen/mocs_compilation.cpp.o[0m
+[ 41%] [34m[1mGenerating C++ code from vrx_gazebo/BallShooter.srv[0m
+[ 43%] [32mBuilding CXX object msgs/CMakeFiles/dock_placard_msgs.dir/dock_placard_msgs_autogen/mocs_compilation.cpp.o[0m
+[ 43%] Built target vrx_gazebo_generate_messages_lisp
+[ 43%] [32mBuilding CXX object msgs/CMakeFiles/dock_placard_msgs.dir/dock_placard.pb.cc.o[0m
+[ 43%] [34m[1mGenerating Python code from SRV vrx_gazebo/BallShooter[0m
+[ 44%] [32mBuilding CXX object msgs/CMakeFiles/light_buoy_colors_msgs.dir/light_buoy_colors.pb.cc.o[0m
+[ 44%] [32mBuilding CXX object CMakeFiles/ball_shooter_plugin.dir/ball_shooter_plugin_autogen/mocs_compilation.cpp.o[0m
+[ 45%] [32mBuilding CXX object CMakeFiles/ball_shooter_plugin.dir/src/ball_shooter_plugin.cc.o[0m
+
+[ 45%] Built target vrx_gazebo_generate_messages_nodejs
+[ 46%] [32mBuilding CXX object CMakeFiles/waypoint_markers.dir/waypoint_markers_autogen/mocs_compilation.cpp.o[0m
+
+
+
+[ 46%] [32mBuilding CXX object CMakeFiles/waypoint_markers.dir/src/waypoint_markers.cc.o[0m
+
+
+
+
+
+
+
+
+
+
+
+
+[ 47%] [34m[1mCopying to devel space: /home/sinloops/catkin_ws/devel/.private/vrx_gazebo/share/vrx_gazebo/worlds/perception_task.world[0m
+[ 47%] [34m[1mCopying to devel space: /home/sinloops/catkin_ws/devel/.private/vrx_gazebo/share/vrx_gazebo/worlds/wildlife_task.world[0m
+[ 47%] [34m[1mCopying to devel space: /home/sinloops/catkin_ws/devel/.private/vrx_gazebo/share/vrx_gazebo/worlds/gymkhana.world[0m
+[ 48%] [34m[1mCopying to devel space: /home/sinloops/catkin_ws/devel/.private/vrx_gazebo/share/vrx_gazebo/worlds/example_course.world[0m
+[ 50%] [34m[1mCopying to devel space: /home/sinloops/catkin_ws/devel/.private/vrx_gazebo/share/vrx_gazebo/worlds/sydneyregatta.world[0m
+[ 51%] [34m[1mCopying to devel space: /home/sinloops/catkin_ws/devel/.private/vrx_gazebo/share/vrx_gazebo/worlds/scan_dock_deliver.world[0m
+[ 52%] [34m[1mCopying to devel space: /home/sinloops/catkin_ws/devel/.private/vrx_gazebo/share/vrx_gazebo/worlds/wayfinding_task.world[0m
+[ 52%] Built target vrx_gazebo__xacro_auto_generate
+[ 52%] [34m[1mCopying to devel space: /home/sinloops/catkin_ws/devel/.private/vrx_gazebo/share/vrx_gazebo/worlds/stationkeeping_task.world[0m
+[ 53%] [34m[1mGenerating Python msg __init__.py for vrx_gazebo[0m
+[ 54%] [34m[1mGenerating Python srv __init__.py for vrx_gazebo[0m
+[ 54%] Built target vrx_gazebo__xacro_auto_generate_to_devel_space_
+[35m[1mScanning dependencies of target vrx_gazebo_xacro_generated_to_devel_space_[0m
+[ 54%] Built target vrx_gazebo_generate_messages_cpp
+[ 54%] Built target vrx_gazebo_xacro_generated_to_devel_space_
+[35m[1mScanning dependencies of target scoring_plugin_autogen[0m
+[35m[1mScanning dependencies of target gui_task_widget_autogen[0m
+[ 55%] [34m[1mAutomatic MOC and UIC for target scoring_plugin[0m
+[ 55%] [34m[1mAutomatic MOC and UIC for target gui_task_widget[0m
+[ 55%] Built target scoring_plugin_autogen
+[35m[1mScanning dependencies of target scoring_plugin[0m
+[ 55%] Built target vrx_gazebo_generate_messages_py
+[ 56%] [32mBuilding CXX object CMakeFiles/scoring_plugin.dir/scoring_plugin_autogen/mocs_compilation.cpp.o[0m
+[ 58%] [32mBuilding CXX object CMakeFiles/scoring_plugin.dir/src/scoring_plugin.cc.o[0m
+[ 58%] Built target vrx_gazebo_generate_messages_eus
+[35m[1mScanning dependencies of target vrx_gazebo_generate_messages[0m
+[ 58%] Built target vrx_gazebo_generate_messages
+[ 59%] [32m[1mLinking CXX shared library /home/sinloops/catkin_ws/devel/.private/vrx_gazebo/lib/libdock_placard_msgs.so[0m
+[ 60%] [32m[1mLinking CXX shared library /home/sinloops/catkin_ws/devel/.private/vrx_gazebo/lib/liblight_buoy_colors_msgs.so[0m
+[ 61%] Built target light_buoy_colors_msgs
+[ 62%] Built target dock_placard_msgs
+[35m[1mScanning dependencies of target light_buoy_plugin_autogen[0m
+[35m[1mScanning dependencies of target placard_plugin_autogen[0m
+[ 63%] [34m[1mAutomatic MOC and UIC for target light_buoy_plugin[0m
+[ 65%] [34m[1mAutomatic MOC and UIC for target placard_plugin[0m
+[ 65%] Built target light_buoy_plugin_autogen
+[ 65%] Built target placard_plugin_autogen
+[35m[1mScanning dependencies of target light_buoy_plugin[0m
+[35m[1mScanning dependencies of target placard_plugin[0m
+[ 66%] [32mBuilding CXX object CMakeFiles/light_buoy_plugin.dir/light_buoy_plugin_autogen/mocs_compilation.cpp.o[0m
+[ 66%] [32mBuilding CXX object CMakeFiles/light_buoy_plugin.dir/src/light_buoy_plugin.cc.o[0m
+[ 67%] [32mBuilding CXX object CMakeFiles/placard_plugin.dir/placard_plugin_autogen/mocs_compilation.cpp.o[0m
+[ 67%] [32mBuilding CXX object CMakeFiles/placard_plugin.dir/src/placard_plugin.cc.o[0m
+[ 67%] Built target gui_task_widget_autogen
+[35m[1mScanning dependencies of target gui_task_widget[0m
+[ 68%] [32mBuilding CXX object CMakeFiles/gui_task_widget.dir/src/gui_task_widget.cc.o[0m
+[ 68%] [32mBuilding CXX object CMakeFiles/gui_task_widget.dir/gui_task_widget_autogen/mocs_compilation.cpp.o[0m
+[ 69%] [32m[1mLinking CXX shared library /home/sinloops/catkin_ws/devel/.private/vrx_gazebo/lib/libwaypoint_markers.so[0m
+[ 69%] Built target waypoint_markers
+[35m[1mScanning dependencies of target follow_plugin_autogen[0m
+[ 70%] [34m[1mAutomatic MOC and UIC for target follow_plugin[0m
+[ 70%] Built target follow_plugin_autogen
+[35m[1mScanning dependencies of target follow_plugin[0m
+[ 72%] [32mBuilding CXX object CMakeFiles/follow_plugin.dir/follow_plugin_autogen/mocs_compilation.cpp.o[0m
+[ 73%] [32mBuilding CXX object CMakeFiles/follow_plugin.dir/src/follow_plugin.cc.o[0m
+[ 74%] [32m[1mLinking CXX shared library /home/sinloops/catkin_ws/devel/.private/vrx_gazebo/lib/libplacard_plugin.so[0m
+[ 74%] [32m[1mLinking CXX shared library /home/sinloops/catkin_ws/devel/.private/vrx_gazebo/lib/libscoring_plugin.so[0m
+[ 74%] Built target placard_plugin
+[ 75%] [32m[1mLinking CXX shared library /home/sinloops/catkin_ws/devel/.private/vrx_gazebo/lib/liblight_buoy_plugin.so[0m
+[ 76%] [32m[1mLinking CXX shared library /home/sinloops/catkin_ws/devel/.private/vrx_gazebo/lib/libball_shooter_plugin.so[0m
+[ 76%] Built target ball_shooter_plugin
+[ 76%] Built target scoring_plugin
+[35m[1mScanning dependencies of target wayfinding_scoring_plugin_autogen[0m
+[35m[1mScanning dependencies of target gymkhana_vrx_scoring_plugin_autogen[0m
+[35m[1mScanning dependencies of target stationkeeping_scoring_plugin_autogen[0m
+[35m[1mScanning dependencies of target scan_dock_scoring_plugin_autogen[0m
+[35m[1mScanning dependencies of target navigation_scoring_plugin_autogen[0m
+[35m[1mScanning dependencies of target wildlife_scoring_plugin_autogen[0m
+[35m[1mScanning dependencies of target perception_scoring_plugin_autogen[0m
+[ 77%] [34m[1mAutomatic MOC and UIC for target wayfinding_scoring_plugin[0m
+[ 79%] [34m[1mAutomatic MOC and UIC for target stationkeeping_scoring_plugin[0m
+[ 79%] [34m[1mAutomatic MOC and UIC for target scan_dock_scoring_plugin[0m
+[ 80%] [34m[1mAutomatic MOC and UIC for target gymkhana_vrx_scoring_plugin[0m
+[ 80%] [34m[1mAutomatic MOC and UIC for target navigation_scoring_plugin[0m
+[ 81%] [34m[1mAutomatic MOC and UIC for target perception_scoring_plugin[0m
+[ 82%] [34m[1mAutomatic MOC and UIC for target wildlife_scoring_plugin[0m
+[ 82%] Built target scan_dock_scoring_plugin_autogen
+[ 82%] Built target gymkhana_vrx_scoring_plugin_autogen
+[ 82%] Built target navigation_scoring_plugin_autogen
+[ 82%] Built target perception_scoring_plugin_autogen
+[ 82%] Built target wayfinding_scoring_plugin_autogen
+[ 82%] Built target stationkeeping_scoring_plugin_autogen
+[ 82%] Built target wildlife_scoring_plugin_autogen
+[35m[1mScanning dependencies of target gymkhana_vrx_scoring_plugin[0m
+[35m[1mScanning dependencies of target scan_dock_scoring_plugin[0m
+[35m[1mScanning dependencies of target perception_scoring_plugin[0m
+[35m[1mScanning dependencies of target stationkeeping_scoring_plugin[0m
+[35m[1mScanning dependencies of target wildlife_scoring_plugin[0m
+[35m[1mScanning dependencies of target navigation_scoring_plugin[0m
+[35m[1mScanning dependencies of target wayfinding_scoring_plugin[0m
+[ 83%] [32mBuilding CXX object CMakeFiles/gymkhana_vrx_scoring_plugin.dir/gymkhana_vrx_scoring_plugin_autogen/mocs_compilation.cpp.o[0m
+[ 84%] [32mBuilding CXX object CMakeFiles/gymkhana_vrx_scoring_plugin.dir/src/gymkhana_scoring_plugin.cc.o[0m
+[ 84%] [32mBuilding CXX object CMakeFiles/navigation_scoring_plugin.dir/navigation_scoring_plugin_autogen/mocs_compilation.cpp.o[0m
+[ 84%] [32mBuilding CXX object CMakeFiles/wildlife_scoring_plugin.dir/wildlife_scoring_plugin_autogen/mocs_compilation.cpp.o[0m
+[ 86%] [32mBuilding CXX object CMakeFiles/wayfinding_scoring_plugin.dir/wayfinding_scoring_plugin_autogen/mocs_compilation.cpp.o[0m
+[ 87%] [32mBuilding CXX object CMakeFiles/wildlife_scoring_plugin.dir/src/wildlife_scoring_plugin.cc.o[0m
+[ 88%] [32mBuilding CXX object CMakeFiles/navigation_scoring_plugin.dir/src/navigation_scoring_plugin.cc.o[0m
+[ 89%] [32mBuilding CXX object CMakeFiles/wayfinding_scoring_plugin.dir/src/wayfinding_scoring_plugin.cc.o[0m
+[ 89%] [32mBuilding CXX object CMakeFiles/scan_dock_scoring_plugin.dir/scan_dock_scoring_plugin_autogen/mocs_compilation.cpp.o[0m
+[ 90%] [32mBuilding CXX object CMakeFiles/perception_scoring_plugin.dir/perception_scoring_plugin_autogen/mocs_compilation.cpp.o[0m
+[ 91%] [32mBuilding CXX object CMakeFiles/stationkeeping_scoring_plugin.dir/stationkeeping_scoring_plugin_autogen/mocs_compilation.cpp.o[0m
+[ 93%] [32mBuilding CXX object CMakeFiles/scan_dock_scoring_plugin.dir/src/scan_dock_scoring_plugin.cc.o[0m
+[ 94%] [32mBuilding CXX object CMakeFiles/perception_scoring_plugin.dir/src/perception_scoring_plugin.cc.o[0m
+[ 94%] [32mBuilding CXX object CMakeFiles/stationkeeping_scoring_plugin.dir/src/stationkeeping_scoring_plugin.cc.o[0m
+[ 94%] Built target light_buoy_plugin
+[ 95%] [32m[1mLinking CXX shared library /home/sinloops/catkin_ws/devel/.private/vrx_gazebo/lib/libgui_task_widget.so[0m
+[ 95%] Built target gui_task_widget
+[ 95%] [32m[1mLinking CXX shared library /home/sinloops/catkin_ws/devel/.private/vrx_gazebo/lib/libgymkhana_vrx_scoring_plugin.so[0m
+[ 95%] [32m[1mLinking CXX shared library /home/sinloops/catkin_ws/devel/.private/vrx_gazebo/lib/libfollow_plugin.so[0m
+[ 95%] Built target gymkhana_vrx_scoring_plugin
+[ 95%] [32m[1mLinking CXX shared library /home/sinloops/catkin_ws/devel/.private/vrx_gazebo/lib/libperception_scoring_plugin.so[0m
+[ 95%] Built target follow_plugin
+[ 95%] Built target perception_scoring_plugin
+[ 96%] [32m[1mLinking CXX shared library /home/sinloops/catkin_ws/devel/.private/vrx_gazebo/lib/libnavigation_scoring_plugin.so[0m
+[ 97%] [32m[1mLinking CXX shared library /home/sinloops/catkin_ws/devel/.private/vrx_gazebo/lib/libwildlife_scoring_plugin.so[0m
+[ 97%] Built target navigation_scoring_plugin
+[ 97%] Built target wildlife_scoring_plugin
+[ 98%] [32m[1mLinking CXX shared library /home/sinloops/catkin_ws/devel/.private/vrx_gazebo/lib/libstationkeeping_scoring_plugin.so[0m
+[ 98%] [32m[1mLinking CXX shared library /home/sinloops/catkin_ws/devel/.private/vrx_gazebo/lib/libwayfinding_scoring_plugin.so[0m
+[100%] [32m[1mLinking CXX shared library /home/sinloops/catkin_ws/devel/.private/vrx_gazebo/lib/libscan_dock_scoring_plugin.so[0m
+[100%] Built target stationkeeping_scoring_plugin
+[100%] Built target wayfinding_scoring_plugin
+[100%] Built target scan_dock_scoring_plugin

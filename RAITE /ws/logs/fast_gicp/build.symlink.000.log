@@ -1,0 +1,6 @@
+Symlinking /home/sinloops/catkin_ws/devel/lib/libfast_gicp.so
+Symlinking /home/sinloops/catkin_ws/devel/lib/fast_gicp/gicp_kitti
+Symlinking /home/sinloops/catkin_ws/devel/lib/fast_gicp/gicp_align
+Symlinking /home/sinloops/catkin_ws/devel/lib/pkgconfig/fast_gicp.pc
+Symlinking /home/sinloops/catkin_ws/devel/share/fast_gicp/cmake/fast_gicpConfig-version.cmake
+Symlinking /home/sinloops/catkin_ws/devel/share/fast_gicp/cmake/fast_gicpConfig.cmake

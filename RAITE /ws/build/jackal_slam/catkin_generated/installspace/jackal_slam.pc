@@ -1,0 +1,8 @@
+prefix=/home/sinloops/catkin_ws/install
+
+Name: jackal_slam
+Description: Description of jackal_slam
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: actionlib actionlib_msgs costmap_2d cv_bridge geometry_msgs map_msgs message_runtime move_base_msgs nav_msgs roscpp rospy sensor_msgs std_msgs tf tf2 visualization_msgs

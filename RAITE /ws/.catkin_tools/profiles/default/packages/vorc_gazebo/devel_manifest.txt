@@ -1,0 +1,6 @@
+autonomy_boat_sim/vrx/vorc_gazebo
+/home/sinloops/catkin_ws/devel/.private/vorc_gazebo/cmake.lock /home/sinloops/catkin_ws/devel/./cmake.lock
+/home/sinloops/catkin_ws/devel/.private/vorc_gazebo/lib/pkgconfig/vorc_gazebo.pc /home/sinloops/catkin_ws/devel/lib/pkgconfig/vorc_gazebo.pc
+/home/sinloops/catkin_ws/devel/.private/vorc_gazebo/share/vorc_gazebo/cmake/vorc_gazeboConfig.cmake /home/sinloops/catkin_ws/devel/share/vorc_gazebo/cmake/vorc_gazeboConfig.cmake
+/home/sinloops/catkin_ws/devel/.private/vorc_gazebo/share/vorc_gazebo/cmake/vorc_gazeboConfig-version.cmake /home/sinloops/catkin_ws/devel/share/vorc_gazebo/cmake/vorc_gazeboConfig-version.cmake
+/home/sinloops/catkin_ws/devel/.private/vorc_gazebo/share/vorc_gazebo/worlds/marina.world /home/sinloops/catkin_ws/devel/share/vorc_gazebo/worlds/marina.world

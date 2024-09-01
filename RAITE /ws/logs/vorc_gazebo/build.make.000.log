@@ -1,0 +1,12 @@
+[35m[1mScanning dependencies of target vorc_gazebo__xacro_auto_generate[0m
+[35m[1mScanning dependencies of target vorc_gazebo__xacro_auto_generate_to_devel_space_[0m
+[ 50%] [34m[1mxacro: generating worlds/marina.world from worlds/marina.world.xacro[0m
+[ 50%] [34m[1mxacro: generating worlds/marina.world from worlds/marina.world.xacro[0m
+[ 75%] [34m[1mcreating dir /home/sinloops/catkin_ws/devel/.private/vorc_gazebo/share/vorc_gazebo/worlds[0m
+
+
+[ 75%] Built target vorc_gazebo__xacro_auto_generate
+[100%] [34m[1mCopying to devel space: /home/sinloops/catkin_ws/devel/.private/vorc_gazebo/share/vorc_gazebo/worlds/marina.world[0m
+[100%] Built target vorc_gazebo__xacro_auto_generate_to_devel_space_
+[35m[1mScanning dependencies of target vorc_gazebo_xacro_generated_to_devel_space_[0m
+[100%] Built target vorc_gazebo_xacro_generated_to_devel_space_

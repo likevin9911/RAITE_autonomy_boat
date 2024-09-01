@@ -1,0 +1,8 @@
+prefix=/home/sinloops/catkin_ws/devel/.private/jackal_velodyne
+
+Name: jackal_velodyne
+Description: Description of jackal_velodyne
+Version: 1.0.0
+Cflags: -I/home/sinloops/catkin_ws/src/jackal_velodyne/include
+Libs: -L${prefix}/lib 
+Requires: 

@@ -1,0 +1,6 @@
+devel_space: /home/sinloops/catkin_ws/devel
+install: false
+install_space: /home/sinloops/catkin_ws/install
+profile: default
+source_space: /home/sinloops/catkin_ws/src
+workspace: /home/sinloops/catkin_ws

@@ -1,0 +1,6 @@
+autonomy_boat_sim/vrx/cora_description
+/home/sinloops/catkin_ws/devel/.private/cora_description/cmake.lock /home/sinloops/catkin_ws/devel/./cmake.lock
+/home/sinloops/catkin_ws/devel/.private/cora_description/lib/pkgconfig/cora_description.pc /home/sinloops/catkin_ws/devel/lib/pkgconfig/cora_description.pc
+/home/sinloops/catkin_ws/devel/.private/cora_description/share/cora_description/cmake/cora_descriptionConfig-version.cmake /home/sinloops/catkin_ws/devel/share/cora_description/cmake/cora_descriptionConfig-version.cmake
+/home/sinloops/catkin_ws/devel/.private/cora_description/share/cora_description/cmake/cora_descriptionConfig.cmake /home/sinloops/catkin_ws/devel/share/cora_description/cmake/cora_descriptionConfig.cmake
+/home/sinloops/catkin_ws/devel/.private/cora_description/share/cora_description/urdf/cora.urdf /home/sinloops/catkin_ws/devel/share/cora_description/urdf/cora.urdf

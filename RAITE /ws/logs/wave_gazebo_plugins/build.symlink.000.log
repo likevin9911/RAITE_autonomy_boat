@@ -1,0 +1,7 @@
+Symlinking /home/sinloops/catkin_ws/devel/lib/libwavegauge_plugin.so
+Symlinking /home/sinloops/catkin_ws/devel/lib/libWavefieldVisualPlugin.so
+Symlinking /home/sinloops/catkin_ws/devel/lib/libWavefieldModelPlugin.so
+Symlinking /home/sinloops/catkin_ws/devel/lib/libHydrodynamics.so
+Symlinking /home/sinloops/catkin_ws/devel/lib/pkgconfig/wave_gazebo_plugins.pc
+Symlinking /home/sinloops/catkin_ws/devel/share/wave_gazebo_plugins/cmake/wave_gazebo_pluginsConfig.cmake
+Symlinking /home/sinloops/catkin_ws/devel/share/wave_gazebo_plugins/cmake/wave_gazebo_pluginsConfig-version.cmake

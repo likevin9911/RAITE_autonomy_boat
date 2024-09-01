@@ -1,0 +1,57 @@
+[35m[1mScanning dependencies of target vrx_2019__xacro_auto_generate[0m
+[35m[1mScanning dependencies of target vrx_2019__xacro_auto_generate_to_devel_space_[0m
+[  3%] [34m[1mcreating dir /home/sinloops/catkin_ws/devel/.private/vrx_2019/share/vrx_2019/worlds[0m
+[  6%] [34m[1mxacro: generating worlds/navigation_task.world from worlds/navigation_task.world.xacro[0m
+[ 12%] [34m[1mxacro: generating worlds/example_course.world from worlds/example_course.world.xacro[0m
+[ 16%] [34m[1mxacro: generating worlds/dock.world from worlds/dock.world.xacro[0m
+[ 16%] [34m[1mxacro: generating worlds/dock.world from worlds/dock.world.xacro[0m
+[ 19%] [34m[1mxacro: generating worlds/navigation_task.world from worlds/navigation_task.world.xacro[0m
+[ 22%] [34m[1mxacro: generating worlds/sandisland.world from worlds/sandisland.world.xacro[0m
+[ 25%] [34m[1mxacro: generating worlds/stationkeeping_task.world from worlds/stationkeeping_task.world.xacro[0m
+[ 29%] [34m[1mxacro: generating worlds/perception_task.world from worlds/perception_task.world.xacro[0m
+[ 32%] [34m[1mxacro: generating worlds/ocean.world from worlds/ocean.world.xacro[0m
+[ 35%] [34m[1mxacro: generating worlds/example_course.world from worlds/example_course.world.xacro[0m
+[ 41%] [34m[1mxacro: generating worlds/sandisland.world from worlds/sandisland.world.xacro[0m
+[ 41%] [34m[1mxacro: generating worlds/ocean.world from worlds/ocean.world.xacro[0m
+[ 45%] [34m[1mxacro: generating worlds/perception_task.world from worlds/perception_task.world.xacro[0m
+[ 48%] [34m[1mxacro: generating worlds/wayfinding_task.world from worlds/wayfinding_task.world.xacro[0m
+[ 51%] [34m[1mxacro: generating worlds/wind_test.world from worlds/wind_test.world.xacro[0m
+[ 54%] [34m[1mxacro: generating worlds/wind_test.world from worlds/wind_test.world.xacro[0m
+[ 58%] [34m[1mxacro: generating worlds/stationkeeping_task.world from worlds/stationkeeping_task.world.xacro[0m
+[ 61%] [34m[1mxacro: generating worlds/scan_and_dock.world from worlds/scan_and_dock.world.xacro[0m
+[ 64%] [34m[1mxacro: generating worlds/scan_and_dock.world from worlds/scan_and_dock.world.xacro[0m
+[ 67%] [34m[1mxacro: generating worlds/wayfinding_task.world from worlds/wayfinding_task.world.xacro[0m
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[ 70%] [34m[1mCopying to devel space: /home/sinloops/catkin_ws/devel/.private/vrx_2019/share/vrx_2019/worlds/example_course.world[0m
+
+
+
+
+
+
+[ 74%] [34m[1mCopying to devel space: /home/sinloops/catkin_ws/devel/.private/vrx_2019/share/vrx_2019/worlds/scan_and_dock.world[0m
+[ 80%] [34m[1mCopying to devel space: /home/sinloops/catkin_ws/devel/.private/vrx_2019/share/vrx_2019/worlds/wind_test.world[0m
+[ 80%] [34m[1mCopying to devel space: /home/sinloops/catkin_ws/devel/.private/vrx_2019/share/vrx_2019/worlds/wayfinding_task.world[0m
+[ 83%] [34m[1mCopying to devel space: /home/sinloops/catkin_ws/devel/.private/vrx_2019/share/vrx_2019/worlds/sandisland.world[0m
+[ 87%] [34m[1mCopying to devel space: /home/sinloops/catkin_ws/devel/.private/vrx_2019/share/vrx_2019/worlds/stationkeeping_task.world[0m
+[ 87%] Built target vrx_2019__xacro_auto_generate
+[ 90%] [34m[1mCopying to devel space: /home/sinloops/catkin_ws/devel/.private/vrx_2019/share/vrx_2019/worlds/dock.world[0m
+[ 93%] [34m[1mCopying to devel space: /home/sinloops/catkin_ws/devel/.private/vrx_2019/share/vrx_2019/worlds/perception_task.world[0m
+[ 96%] [34m[1mCopying to devel space: /home/sinloops/catkin_ws/devel/.private/vrx_2019/share/vrx_2019/worlds/ocean.world[0m
+[100%] [34m[1mCopying to devel space: /home/sinloops/catkin_ws/devel/.private/vrx_2019/share/vrx_2019/worlds/navigation_task.world[0m
+[100%] Built target vrx_2019__xacro_auto_generate_to_devel_space_
+[35m[1mScanning dependencies of target vrx_2019_xacro_generated_to_devel_space_[0m
+[100%] Built target vrx_2019_xacro_generated_to_devel_space_

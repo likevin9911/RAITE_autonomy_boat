@@ -1,0 +1,8 @@
+prefix=/home/sinloops/catkin_ws/install
+
+Name: usv_waypoints
+Description: Description of usv_waypoints
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

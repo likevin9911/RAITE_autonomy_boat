@@ -1,0 +1,4 @@
+[ 57%] Built target Hydrodynamics
+[ 71%] Built target WavefieldModelPlugin
+[ 85%] Built target WavefieldVisualPlugin
+[100%] Built target wavegauge_plugin

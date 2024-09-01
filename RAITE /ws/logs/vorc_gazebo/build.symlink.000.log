@@ -1,0 +1,4 @@
+Symlinking /home/sinloops/catkin_ws/devel/lib/pkgconfig/vorc_gazebo.pc
+Symlinking /home/sinloops/catkin_ws/devel/share/vorc_gazebo/cmake/vorc_gazeboConfig.cmake
+Symlinking /home/sinloops/catkin_ws/devel/share/vorc_gazebo/cmake/vorc_gazeboConfig-version.cmake
+Symlinking /home/sinloops/catkin_ws/devel/share/vorc_gazebo/worlds/marina.world

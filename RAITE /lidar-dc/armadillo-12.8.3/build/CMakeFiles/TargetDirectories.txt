@@ -1,0 +1,16 @@
+/home/sinloops/lidar_camera/armadillo-12.8.3/build/CMakeFiles/install/strip.dir
+/home/sinloops/lidar_camera/armadillo-12.8.3/build/CMakeFiles/install/local.dir
+/home/sinloops/lidar_camera/armadillo-12.8.3/build/CMakeFiles/install.dir
+/home/sinloops/lidar_camera/armadillo-12.8.3/build/CMakeFiles/list_install_components.dir
+/home/sinloops/lidar_camera/armadillo-12.8.3/build/CMakeFiles/rebuild_cache.dir
+/home/sinloops/lidar_camera/armadillo-12.8.3/build/CMakeFiles/edit_cache.dir
+/home/sinloops/lidar_camera/armadillo-12.8.3/build/CMakeFiles/test.dir
+/home/sinloops/lidar_camera/armadillo-12.8.3/build/CMakeFiles/armadillo.dir
+/home/sinloops/lidar_camera/armadillo-12.8.3/build/tests1/CMakeFiles/install/strip.dir
+/home/sinloops/lidar_camera/armadillo-12.8.3/build/tests1/CMakeFiles/install/local.dir
+/home/sinloops/lidar_camera/armadillo-12.8.3/build/tests1/CMakeFiles/install.dir
+/home/sinloops/lidar_camera/armadillo-12.8.3/build/tests1/CMakeFiles/list_install_components.dir
+/home/sinloops/lidar_camera/armadillo-12.8.3/build/tests1/CMakeFiles/rebuild_cache.dir
+/home/sinloops/lidar_camera/armadillo-12.8.3/build/tests1/CMakeFiles/edit_cache.dir
+/home/sinloops/lidar_camera/armadillo-12.8.3/build/tests1/CMakeFiles/test.dir
+/home/sinloops/lidar_camera/armadillo-12.8.3/build/tests1/CMakeFiles/smoke_test.dir

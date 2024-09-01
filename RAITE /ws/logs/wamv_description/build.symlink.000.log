@@ -1,0 +1,4 @@
+Symlinking /home/sinloops/catkin_ws/devel/lib/pkgconfig/wamv_description.pc
+Symlinking /home/sinloops/catkin_ws/devel/share/wamv_description/cmake/wamv_descriptionConfig.cmake
+Symlinking /home/sinloops/catkin_ws/devel/share/wamv_description/cmake/wamv_descriptionConfig-version.cmake
+Symlinking /home/sinloops/catkin_ws/devel/share/wamv_description/urdf/wamv_base.urdf

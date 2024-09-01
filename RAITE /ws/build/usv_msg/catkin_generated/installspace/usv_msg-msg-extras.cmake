@@ -1,0 +1,2 @@
+set(usv_msg_MESSAGE_FILES "msg/Course.msg;msg/VesselWaypoint.msg;msg/VesselPath.msg;msg/Object.msg;msg/ObjectArray.msg;msg/Waypoint.msg;msg/WaypointRoute.msg;msg/Task.msg;msg/WaypointReached.msg;msg/DockAction.msg;msg/DockActionGoal.msg;msg/DockActionResult.msg;msg/DockActionFeedback.msg;msg/DockGoal.msg;msg/DockResult.msg;msg/DockFeedback.msg")
+set(usv_msg_SERVICE_FILES "srv/ClassifyBuoy.srv;srv/ClassifyPlacard.srv")

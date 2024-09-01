@@ -1,0 +1,4 @@
+/home/sinloops/catkin_ws/devel/./cmake.lock 4561
+/home/sinloops/catkin_ws/devel/lib/libsrc_costmap.so 104
+/home/sinloops/catkin_ws/devel/lib/libsrc_navigation.so 104
+/home/sinloops/catkin_ws/devel/lib/libsrc_frontier_search.so 104

@@ -1,0 +1,6 @@
+Symlinking /home/sinloops/catkin_ws/devel/lib/pkgconfig/wave_gazebo.pc
+Symlinking /home/sinloops/catkin_ws/devel/share/wave_gazebo/cmake/wave_gazeboConfig-version.cmake
+Symlinking /home/sinloops/catkin_ws/devel/share/wave_gazebo/cmake/wave_gazeboConfig.cmake
+Symlinking /home/sinloops/catkin_ws/devel/share/wave_gazebo/worlds/ocean_buoys.world
+Symlinking /home/sinloops/catkin_ws/devel/share/wave_gazebo/worlds/ocean_wamv.world
+Symlinking /home/sinloops/catkin_ws/devel/share/wave_gazebo/worlds/ocean.world

@@ -1,0 +1,6 @@
+# CMake generated Testfile for 
+# Source directory: /usr/src/googletest/googletest
+# Build directory: /home/sinloops/catkin_ws/build/vrx_2019/gtest/googletest
+# 
+# This file includes the relevant testing commands required for 
+# testing this directory and lists subdirectories to be tested as well.

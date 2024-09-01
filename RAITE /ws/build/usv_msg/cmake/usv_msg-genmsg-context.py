@@ -1,0 +1,11 @@
+# generated from genmsg/cmake/pkg-genmsg.context.in
+
+messages_str = "/home/sinloops/catkin_ws/src/autonomy_boat_sim/usv_vrx/usv_msg/msg/Course.msg;/home/sinloops/catkin_ws/src/autonomy_boat_sim/usv_vrx/usv_msg/msg/VesselWaypoint.msg;/home/sinloops/catkin_ws/src/autonomy_boat_sim/usv_vrx/usv_msg/msg/VesselPath.msg;/home/sinloops/catkin_ws/src/autonomy_boat_sim/usv_vrx/usv_msg/msg/Object.msg;/home/sinloops/catkin_ws/src/autonomy_boat_sim/usv_vrx/usv_msg/msg/ObjectArray.msg;/home/sinloops/catkin_ws/src/autonomy_boat_sim/usv_vrx/usv_msg/msg/Waypoint.msg;/home/sinloops/catkin_ws/src/autonomy_boat_sim/usv_vrx/usv_msg/msg/WaypointRoute.msg;/home/sinloops/catkin_ws/src/autonomy_boat_sim/usv_vrx/usv_msg/msg/Task.msg;/home/sinloops/catkin_ws/src/autonomy_boat_sim/usv_vrx/usv_msg/msg/WaypointReached.msg;/home/sinloops/catkin_ws/devel/.private/usv_msg/share/usv_msg/msg/DockAction.msg;/home/sinloops/catkin_ws/devel/.private/usv_msg/share/usv_msg/msg/DockActionGoal.msg;/home/sinloops/catkin_ws/devel/.private/usv_msg/share/usv_msg/msg/DockActionResult.msg;/home/sinloops/catkin_ws/devel/.private/usv_msg/share/usv_msg/msg/DockActionFeedback.msg;/home/sinloops/catkin_ws/devel/.private/usv_msg/share/usv_msg/msg/DockGoal.msg;/home/sinloops/catkin_ws/devel/.private/usv_msg/share/usv_msg/msg/DockResult.msg;/home/sinloops/catkin_ws/devel/.private/usv_msg/share/usv_msg/msg/DockFeedback.msg"
+services_str = "/home/sinloops/catkin_ws/src/autonomy_boat_sim/usv_vrx/usv_msg/srv/ClassifyBuoy.srv;/home/sinloops/catkin_ws/src/autonomy_boat_sim/usv_vrx/usv_msg/srv/ClassifyPlacard.srv"
+pkg_name = "usv_msg"
+dependencies_str = "std_msgs;geometry_msgs;sensor_msgs;actionlib_msgs"
+langs = "gencpp;geneus;genlisp;gennodejs;genpy"
+dep_include_paths_str = "usv_msg;/home/sinloops/catkin_ws/src/autonomy_boat_sim/usv_vrx/usv_msg/msg;usv_msg;/home/sinloops/catkin_ws/devel/.private/usv_msg/share/usv_msg/msg;std_msgs;/opt/ros/noetic/share/std_msgs/cmake/../msg;geometry_msgs;/opt/ros/noetic/share/geometry_msgs/cmake/../msg;sensor_msgs;/opt/ros/noetic/share/sensor_msgs/cmake/../msg;actionlib_msgs;/opt/ros/noetic/share/actionlib_msgs/cmake/../msg"
+PYTHON_EXECUTABLE = "/usr/bin/python3"
+package_has_static_sources = '' == 'TRUE'
+genmsg_check_deps_script = "/opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py"
