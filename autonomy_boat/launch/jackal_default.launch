@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+
+<launch>
+  <!-- Gazebo world -->
+  <include file="$(find autonomy_boat)/launch/include/jackal_world.launch" />
+
+  <!-- Run slam_toolbox_sync -->
+  <include file="$(find autonomy_boat)/launch/include/slam_toolbox_sync.launch" />
+  
+  <!-- Run Move Base -->
+  <include file="$(find autonomy_boat)/launch/include/move_base.launch" />
+  
+  <!--- Run Pointcloud Filter -->
+  <include file="$(find autonomy_boat)/launch/include/pointcloud_filter.launch" />
+
+  <!--- Run Pointcloud to Laserscan -->
+  <include file="$(find autonomy_boat)/launch/include/pointcloud2laserscan.launch" />
+
+  <!-- Run Rviz -->
+  <param name="use_gui" value="true"/>
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find autonomy_boat)/rviz/jackal_sim.rviz" />
+
+</launch>

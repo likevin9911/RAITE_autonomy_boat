@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+
+<launch>
+  <!-- Launch the USV Gazebo bringup without GUI -->
+  <include file="$(find usv_gazebo)/launch/usv_bringup.launch">
+    <arg name="gui" value="false"/>
+  </include>
+
+  <!-- Launch RViz for visualization -->
+  <include file="$(find usv_gazebo)/launch/rviz.launch" />
+    
+ 
+  <!-- Launch the navigation stack for the USV -->
+  <include file="$(find usv_gazebo)/launch/usv_navstack.launch" /> <!--change as needed-->
+
+  <!-- Launch the control mechanisms for the USV 
+  <include file="$(find usv_control)/launch/control.launch" />-->
+  <!--include file="$(find usv_gazebo)/launch/thruster_controller.launch" /--> 
+  
+  <!-- Gmapping -->
+  <include file="$(find gmapping)/launch/slam_gmapping_pr2.launch" />
+
+  <include file="$(find usv_gazebo)/launch/usv_keydrive.launch" />
+
+  <include file="$(find autonomy_boat)/launch/include/move_base.launch" />
+   
+  <!--include file="$(find autonomy_boat)/launch/include/pointcloud2laserscan.launch" /-->
+  
+  <include file="$(find autonomy_boat)/launch/include/pointcloud_filter.launch" />
+</launch>
+

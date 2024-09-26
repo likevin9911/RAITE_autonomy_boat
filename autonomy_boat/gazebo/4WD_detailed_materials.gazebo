@@ -1,0 +1,42 @@
+<?xml version="1.0" ?>
+<robot name="4WD" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+<xacro:property name="base_color" value="Gazebo/Gold" />
+<xacro:property name="wheel_color" value="Gazebo/FlatBlack" />
+<xacro:property name="lidar_color" value="Gazebo/BlueGlow" />
+<xacro:property name="camera_color" value="Gazebo/TurquoiseGlow" />
+<xacro:property name="lidar_base_color" value="Gazebo/WhiteGlow" />
+
+<gazebo reference="base_link">
+  <material>${base_color}</material>
+</gazebo>
+
+<gazebo reference="brt_1">
+  <material>${wheel_color}</material>
+</gazebo>
+
+<gazebo reference="frt_1">
+  <material>${wheel_color}</material>
+</gazebo>
+
+<gazebo reference="flt_1">
+  <material>${wheel_color}</material>
+</gazebo>
+
+<gazebo reference="blt_1">
+  <material>${wheel_color}</material>
+</gazebo>
+
+<gazebo reference="lidar_1">
+  <material>${lidar_color}</material>
+</gazebo>
+
+<gazebo reference="lidar_base_1">
+  <material>${lidar_base_color}</material>
+</gazebo>
+
+<gazebo reference="camera">
+  <material>${camera_color}</material>
+</gazebo>
+
+</robot>
