@@ -1,0 +1,9 @@
+<?xml version="1.0">
+<launch>
+  <node pkg="slam_toolbox" type="sync_slam_toolbox_node" name="slam_toolbox" output="screen">
+    <rosparam command="load" file="$(find autonomy_boat)/config/mapper_params_online_sync.yaml" />
+  </node>
+
+  <include file="$(find autonomy_boat)/launch/move_base_jackal.launch" />
+  <include file="$(find jackal_base)/launch/base.launch" />
+</launch>

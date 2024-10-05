@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+
+<launch>
+  <!-- Launch the robot_localization EKF node -->
+  <node pkg="robot_localization" type="ekf_localization_node" name="ekf_localization" output="screen">
+    <param name="frequency" value="30"/>
+    <param name="two_d_mode" value="true"/>
+    <param name="odom_frame" value="odom"/>
+    <param name="base_link_frame" value="base_link"/>
+    <param name="world_frame" value="odom"/>
+
+    <!-- IMU Data from MAVROS -->
+    <param name="imu0" value="/mavros/imu/data"/>
+    <param name="imu0_config" value="[false, false, false, true, true, true, false, false, false, true, true, true, false, false, false]"/>
+    <param name="imu0_differential" value="false"/>
+    <param name="imu0_queue_size" value="10"/>
+    <param name="imu0_nodelay" value="true"/>
+    <param name="imu0_relative" value="true"/>
+    <param name="imu0_remove_gravitational_acceleration" value="true"/>
+
+    <!-- RTK GPS Position from MAVROS -->
+    <param name="gps0" value="/mavros/global_position/global"/>
+    <param name="gps0_config" value="[true, true, false, false, false, false, false, false, false, false, false, false]"/>
+    <param name="gps0_queue_size" value="10"/>
+    <param name="gps0_nodelay" value="true"/>
+    <param name="gps0_relative" value="false"/>
+
+    <!-- GPS Velocity Data from MAVROS -->
+    <param name="gps1" value="/mavros/global_position/raw/gps_vel"/>
+    <param name="gps1_config" value="[false, false, false, false, false, false, true, true, false, false, false, false]"/>
+    <param name="gps1_differential" value="true"/>
+    <param name="gps1_queue_size" value="10"/>
+    <param name="gps1_nodelay" value="true"/>
+
+    <!-- Rejection Thresholds -->
+    <param name="imu0_pose_rejection_threshold" value="0.8"/>
+    <param name="imu0_twist_rejection_threshold" value="0.8"/>
+    <param name="imu0_linear_acceleration_rejection_threshold" value="0.8"/>
+    <param name="gps0_rejection_threshold" value="0.6"/>
+    <param name="gps1_rejection_threshold" value="0.6"/>
+  </node>
+
+  <!-- Launch MAVROS (assumed to be already installed and set up) -->
+  <include file="$(find mavros)/launch/apm.launch"/>
+</launch>

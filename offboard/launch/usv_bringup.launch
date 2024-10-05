@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+
+<launch>
+    <!-- Specify the ACM communication port for Pixhawk -->
+    <arg name="port" default="/dev/ACM0" /> 
+
+    <!-- MAVROS PX4 Launch -->
+    <include file="$(find mavros)/launch/px4.launch">
+        <arg name="fcu_url" value="serial://$(arg port):921600" /> <!-- fix-->s
+        <arg name="gcs_url" value="" />
+        <arg name="tgt_system" value="1" />
+        <arg name="tgt_component" value="1" />
+        <arg name="fcu_protocol" value="v2.0" />
+    </include>
+
+    <!-- Husky harware driver 
+    <node pkg="husky_base" type="husky_node" name="husky_node">
+        <rosparam subst_value="true">
+            port: $(arg port)
+a
+            control_frequency: 10.0
+            diagnostic_frequency: 1.0
+
+            max_acceleration: 3.0
+            max_speed: 1.0
+            wheel_diameter: 0.3555
+            polling_timeout: 10.0
+        </rosparam>
+    </node>-->
+    
+    <!-- Initialize Velodyne -->
+    <node pkg="velodyne_driver" type="velodyne_nodelet_manager" name="velodyne_manager" />
+    <node pkg="velodyne_driver" type="velodyne_driver_node" name="velodyne_driver">
+        <param name="device_ip" value="192.168.1.201"/>
+    </node>
+    
+    <!-- Initialize Depth Camera -->
+    <include file="$(find realsense2_camera)/launch/rs_camera.launch"/>
+	
+	
+    <!-- Start localization (ekf_localization)-->
+    	
+    <!-- Differential controller parameters and basic localization -->
+    <include file="$(find husky_control)/launch/control.launch" />
+
+    <!--Teleop -->
+    <include file="$(find husky_control)/launch/teleop.launch" />
+
+    <!-- Diagnostic Aggregator -->
+    <node pkg="diagnostic_aggregator" type="aggregator_node" name="diagnostic_aggregator">
+        <rosparam command="load" file="$(find husky_base)/config/diagnostics.yaml"/>
+    </node>
+    
+</launch>
+

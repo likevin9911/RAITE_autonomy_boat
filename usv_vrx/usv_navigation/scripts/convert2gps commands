@@ -1,0 +1,6 @@
+convert2gps:
+
+roscore
+rviz
+rosbag play -q -l camera_lidar2.bag 
+nope@ubuntu:~/vrx_ws/src/usv_vrx/usv_navigation/scripts$ python convert2gps_sim_tests.py

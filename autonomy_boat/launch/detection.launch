@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+
+<launch>
+    <node name="detection" pkg="autonomy_boat" type="detection.py" />
+<!-- Run Rviz -->
+  <param name="use_gui" value="true"/>
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find autonomy_boat)/rviz/jackal_test.rviz"/>
+</launch>

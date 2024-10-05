@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+
+<launch>
+    <node name="jackal_explore_node" pkg="autonomy_boat" type="jackal_explore_node" output="screen" />
+</launch>

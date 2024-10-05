@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+
+<launch>
+    
+    <!-- Motor Control -->
+    <node pkg="velodyne_driver" type="velodyne_nodelet_manager" name="velodyne_manager" />
+    <node pkg="velodyne_driver" type="velodyne_driver_node" name="velodyne_driver">
+        <param name="device_ip" value="192.168.1.201"/>
+    </node>
+    
+    <!--Teleop -->
+    <include file="$(find husky_control)/launch/teleop.launch" />
+
+    <!-- Diagnostic Aggregator -->
+    <node pkg="diagnostic_aggregator" type="aggregator_node" name="diagnostic_aggregator">
+        <rosparam command="load" file="$(find husky_base)/config/diagnostics.yaml"/>
+    </node>
+    
+</launch>
+

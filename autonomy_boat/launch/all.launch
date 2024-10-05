@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+
+<launch>
+  <arg name="use_sim_time" default="false" />
+  <arg name="gui" default="false" />
+  <arg name="headless" default="true" />
+ <!--arg name="world_name" default="$(find autonomy_boat)/World/big_rooms.world" /-->
+    <arg name="world_name" default="$(find autonomy_boat)/World/E.world" />
+
+  <!-- Short-term hack to support the original front_laser:=true argument for spawning
+       the simulator. This will be removed in favour of using the config:=x arg instead. -->
+  <arg name="front_laser" default="true" />
+  <arg name="default_config" value="front_laser" if="$(arg front_laser)" />
+  <arg name="default_config" value="base" unless="$(arg front_laser)" />
+  <!-- end of hack -->
+
+  <!-- Configuration of Jackal which you would like to simulate.
+       See jackal_description for details. -->
+  <arg name="config" default="$(arg default_config)" />
+
+  <!-- Optionally enable teleop for the simulation -->
+  <arg name="joystick" default="false" />
+
+  <include file="$(find autonomy_boat)/launch/usv_bringup.launch">
+    <arg name="gui" value="false"/>
+  </include>
+
+<include file="$(find autonomy_boat)/launch/senser.launch" /> 
+
+  <!---  FLOAM  
+  <include file="$(find floam)/launch/floam_velodyne.launch" /> -->
+
+   <!---  Point-Lio  -->
+  <include file="$(find point_lio)/launch/mapping_velody16.launch" /> 
+
+  <!-- PC Filter
+  <include file="$(find autonomy_boat)/launch/include/pointcloud_filter.launch" /> -->
+
+  <!-- PC->LC -->
+  <include file="$(find autonomy_boat)/launch/include/pointcloud2laserscan.launch" />
+
+
+  <!--- Run slam_toolbox 
+  <include file="$(find autonomy_boat)/launch/include/slam_toolbox_sync.launch" />-->
+
+  <!-- Run Gmapping -->
+  <include file="$(find autonomy_boat)/launch/include/gmapping.launch" /> 
+
+  <!-- Navigation Stack   <node pkg="tf" type="static_transform_publisher" name="odom_baselink" args="0 0 0 0 0 0  /odom /base_link 100" />-->
+
+  
+  <!--node pkg="usv_vrx" type="$(find usv_gazebo)/scripts/gps_to_odometry.py" name="pp_odometry" output="screen">
+    <param name="base_lat" value="47.1195475" />
+    <param name="base_lon" value="-88.5473969" />
+    <param name="base_alt" value="177.069" />
+  </node>
+
+
+  <include file="$(find usv_gazebo)/launch/usv_navstack.launch" />-->
+
+
+
+  <!-- Teleop Stack
+  <include file="$(find usv_gazebo)/launch/usv_keydrive.launch" /> -->
+
+  <!-- Run Move Base -->
+  <include file="$(find autonomy_boat)/launch/include/move_base.launch" />
+
+
+
+
+  <!-- Run Rviz -->
+  <param name="use_gui" value="true"/>
+  <node name="rviz_boat" pkg="rviz" type="rviz" args="-d $(find autonomy_boat)/rviz/jackal_test.rviz"/>
+
+</launch>

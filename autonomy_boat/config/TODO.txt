@@ -1,0 +1,17 @@
+move_base yaml files
+costmap_common_params
+local_costmap_params
+global_costmap_params
+base_local_planner_params
+move_base_params
+
+
+packages needed
+move_base -DONE
+robot_localization -Done
+
+
+  Include velodyne, camera, sonar
+  
+gps implementation from mavros to robot_localization
+imu
