@@ -7,123 +7,213 @@ from pymavlink import mavutil
 import time
 from threading import Lock
 
-target_system_id = 1  # Replace with your system ID
-target_component_id = 1  # Replace with your component ID
+# MAVLink system and component IDs
+TARGET_SYSTEM_ID = 1
+TARGET_COMPONENT_ID = 1
 
-# Define min and max PWM values
-PWM_NEUTRAL = 1500
-PWM_MIN = 1300
-PWM_MAX = 1700
+# PWM limits
+PWM_NEUTRAL = 1495          # Neutral PWM value (stop)
+PWM_FORWARD_MIN = 1520      # Minimum PWM to move forward
+PWM_FORWARD_MAX = 1748      # Maximum PWM for forward movement
+PWM_BACKWARD_MAX = 1470     # Maximum PWM to move backward (closest to neutral)
+PWM_BACKWARD_MIN = 1243     # Minimum PWM for reverse movement
 
-# Define min and max cmd_vel values
-CMD_VEL_MIN = -0.8
-CMD_VEL_MAX = 0.8
+# cmd_vel input ranges
+CMD_VEL_MIN = -1.0
+CMD_VEL_MAX = 1.0
 
-# Robot parameters
-WHEEL_BASE = 0.5  # Distance between the motors
-
-# Initialize velocities
-linear_vel = 0.0
-angular_vel = 0.0
-last_cmd_vel_time = None
+# Scaling factors
+LINEAR_SCALE = 1.2   # Adjusts the influence of linear velocity
+ANGULAR_SCALE = 500  # Adjusts the influence of angular velocity (in PWM units)
 
 # Lock for thread safety
 vel_lock = Lock()
 
-def set_rc_channel_pwm(master, channel_id, pwm=1500):
-    """ Set RC channel pwm value
-    Args:
-        master: MAVLink connection object
-        channel_id (int): Channel ID
-        pwm (int, optional): Channel pwm value 1100-1900
+# Channels (1-indexed)
+LEFT_MOTOR_CHANNEL = 4      # Channel 1: Left Motor
+RIGHT_MOTOR_CHANNEL = 1     # Channel 4: Right Motor
+
+def send_set_servo(master, channel, pwm):
     """
-    if channel_id < 1 or channel_id > 8:
-        print("Channel does not exist.")
-        return
-   
-    rc_channel_values = [65535] * 8
-    rc_channel_values[channel_id - 1] = pwm
-    master.mav.rc_channels_override_send(
-        master.target_system,
-        master.target_component,
-        *rc_channel_values)
+    Send a MAV_CMD_DO_SET_SERVO command to set PWM on a specific channel.
+
+    Args:
+        master: MAVLink connection object.
+        channel (int): Servo channel (1-indexed).
+        pwm (int): PWM value to set (typically between 1243-1748).
+    """
+    rospy.logdebug(f"Sending MAV_CMD_DO_SET_SERVO - Channel: {channel}, PWM: {pwm}")
+    
+    # Create the MAVLink message
+    msg = master.mav.command_long_encode(
+        0,  # target_system (0 for broadcast)
+        0,  # target_component (0 for broadcast)
+        mavutil.mavlink.MAV_CMD_DO_SET_SERVO,
+        0,  # confirmation
+        channel,  # param1: Servo number (1-18)
+        pwm,      # param2: PWM value
+        0, 0, 0, 0, 0  # params 3-7 unused
+    )
+    
+    # Send the message
+    try:
+        master.mav.send(msg)
+        rospy.loginfo(f"Sent MAV_CMD_DO_SET_SERVO - Channel {channel}: PWM {pwm}")
+    except Exception as e:
+        rospy.logerr(f"Failed to send MAV_CMD_DO_SET_SERVO: {e}")
+
+def send_motor_pwms(master, left_pwm, right_pwm):
+    """
+    Send PWM values to both motors using MAV_CMD_DO_SET_SERVO.
+
+    Args:
+        master: MAVLink connection object.
+        left_pwm (int): PWM value for the left motor (Channel 1).
+        right_pwm (int): PWM value for the right motor (Channel 4).
+    """
+    # Send PWM for Left Motor
+    send_set_servo(master, LEFT_MOTOR_CHANNEL, left_pwm)
+    
+    # Send PWM for Right Motor
+    send_set_servo(master, RIGHT_MOTOR_CHANNEL, right_pwm)
+
+def scale_velocity_to_pwm(velocity):
+    """
+    Scale the linear velocity input (-1 to 1) to a PWM value, avoiding the dead zone.
+
+    Args:
+        velocity (float): Linear velocity ranging from -1.0 to 1.0.
+
+    Returns:
+        int: Base PWM value for both motors.
+    """
+    # Apply scaling factor
+    scaled_velocity = velocity * LINEAR_SCALE
+
+    # Clamp the scaled velocity to -1 to +1
+    scaled_velocity = max(-1.0, min(1.0, scaled_velocity))
+
+    if scaled_velocity > 0:
+        # Map velocities from 0 to 1 to PWM_FORWARD_MIN to PWM_FORWARD_MAX
+        pwm = PWM_FORWARD_MIN + scaled_velocity * (PWM_FORWARD_MAX - PWM_FORWARD_MIN)
+    elif scaled_velocity < 0:
+        # Map velocities from -1 to 0 to PWM_BACKWARD_MAX to PWM_BACKWARD_MIN
+        pwm = PWM_BACKWARD_MAX + scaled_velocity * (PWM_BACKWARD_MAX - PWM_BACKWARD_MIN)
+    else:
+       pwm  = PWM_NEUTRAL  # No movement
+
+    pwm = int(round(pwm))
+    # Clamp PWM to valid range
+    pwm = max(PWM_BACKWARD_MIN, min(PWM_FORWARD_MAX, pwm))
+    return pwm
 
 def cmd_vel_callback(msg, args):
-    """ Callback function for cmd_vel topic
+    """
+    Callback function to convert cmd_vel messages to motor PWM commands.
+
     Args:
-        msg: Twist message containing velocity data
-        args: Tuple containing (master,)
+        msg (Twist): ROS Twist message containing velocity commands.
+        args (tuple): Tuple containing the MAVLink master connection.
     """
     master = args[0]
-    global linear_vel, angular_vel, last_cmd_vel_time
 
     with vel_lock:
-        linear_vel = msg.linear.x
-        angular_vel = msg.angular.z
-        last_cmd_vel_time = rospy.Time.now()
+        linear_vel = msg.linear.x   # Forward/Backward velocity
+        angular_vel = msg.angular.z # Left/Right angular velocity
 
-    # Pure turning logic: if linear velocity is zero, we perform a point turn
-    if linear_vel == 0:
-        # Positive angular velocity: Left motor reverses, right motor moves forward
-        if angular_vel > 0:
-            left_motor_speed = -CMD_VEL_MAX  # Reverse left motor
-            right_motor_speed = CMD_VEL_MAX  # Forward right motor
-        # Negative angular velocity: Right motor reverses, left motor moves forward
-        else:
-            left_motor_speed = CMD_VEL_MAX  # Forward left motor
-            right_motor_speed = -CMD_VEL_MAX  # Reverse right motor
-    else:
-        # Normal differential drive behavior for linear and angular velocities
-        left_motor_speed = linear_vel - angular_vel * WHEEL_BASE / 2.0
-        right_motor_speed = linear_vel + angular_vel * WHEEL_BASE / 2.0
+    # Calculate base PWM from linear velocity
+    base_pwm = scale_velocity_to_pwm(linear_vel)
 
-    # Map motor speeds to PWM
-    def map_speed_to_pwm(speed):
-        if speed > 0:
-            return int((speed / CMD_VEL_MAX) * (PWM_MAX - PWM_NEUTRAL) + PWM_NEUTRAL)
-        elif speed < 0:
-            return int((speed / CMD_VEL_MIN) * (PWM_NEUTRAL - PWM_MIN) + PWM_NEUTRAL)
-        else:
-            return PWM_NEUTRAL
+    # Calculate PWM offset from angular velocity
+    angular_pwm_offset = angular_vel * ANGULAR_SCALE
 
-    left_pwm = map_speed_to_pwm(left_motor_speed)
-    right_pwm = map_speed_to_pwm(right_motor_speed)
+    # Calculate final PWM values
+    left_pwm = base_pwm + angular_pwm_offset
+    right_pwm = base_pwm - angular_pwm_offset
 
-    # Clamp PWM values to ensure they're within bounds
-    left_pwm = max(PWM_MIN, min(PWM_MAX, left_pwm))
-    right_pwm = max(PWM_MIN, min(PWM_MAX, right_pwm))
 
-    print(f"Received cmd_vel: linear={linear_vel}, angular={angular_vel}")
-    print(f"Setting left motor PWM: {left_pwm}, right motor PWM: {right_pwm}")
+    # Clamp PWM values to valid range
+    left_pwm = int(round(max(PWM_BACKWARD_MIN, min(PWM_FORWARD_MAX, left_pwm))))
+    right_pwm = int(round(max(PWM_BACKWARD_MIN, min(PWM_FORWARD_MAX, right_pwm))))
 
-    # Set PWM values to the motors
-    set_rc_channel_pwm(master, 1, left_pwm)  # Left motor on channel 1
-    set_rc_channel_pwm(master, 3, right_pwm)  # Right motor on channel 3
+    # Log the velocity commands and corresponding PWM values
+    rospy.loginfo(f"cmd_vel: linear={linear_vel}, angular={angular_vel}")
+    rospy.loginfo(f"Left PWM: {left_pwm}, Right PWM: {right_pwm}")
+
+    # Send the PWM commands to the motors
+    send_motor_pwms(master, left_pwm, right_pwm)
+
+def initialize_motors(master):
+    """
+    Initialize both motors to the neutral PWM value to prevent accidental movement.
+
+    Args:
+        master: MAVLink connection object.
+    """
+    rospy.loginfo("Initializing motors to neutral (1495)")
+    send_motor_pwms(master, PWM_NEUTRAL, PWM_NEUTRAL)
+    time.sleep(1)  # Allow time for PWM signals to stabilize
+
+def shutdown_handler(master):
+    """
+    Shutdown handler to set motors to neutral when the script is terminated.
+
+    Args:
+        master: MAVLink connection object.
+    """
+    rospy.loginfo("Shutdown initiated. Setting motors to neutral.")
+    try:
+        send_motor_pwms(master, PWM_NEUTRAL, PWM_NEUTRAL)
+    except Exception as e:
+        rospy.logerr(f"Failed to set motors to neutral during shutdown: {e}")
+    finally:
+        rospy.loginfo("Motors set to neutral. Shutdown complete.")
 
 def main():
+    """
+    Main function to initialize the ROS node, connect to Pixhawk, and subscribe to cmd_vel messages.
+    """
     # Initialize the ROS node
     rospy.init_node('mavlink_cmd_vel_listener')
 
-    # Connect to the Pixhawk
-    master = mavutil.mavlink_connection('udpin:192.168.144.25:15001')
-    master.target_system = target_system_id
-    master.target_component = target_component_id
+    # Connect to the Pixhawk via MAVLink
+    try:
+        master = mavutil.mavlink_connection('udpin:192.168.144.25:15001')
+        rospy.loginfo("MAVLink connection established.")
+    except Exception as e:
+        rospy.logerr(f"Failed to connect to Pixhawk: {e}")
+        return
 
-    # Wait for the first heartbeat
-    master.wait_heartbeat()
-    print(f"Heartbeat from system (system {master.target_system} component {master.target_component})")
+    master.target_system = TARGET_SYSTEM_ID
+    master.target_component = TARGET_COMPONENT_ID
 
-    # Set throttle to neutral to prevent any initial spin
-    print("Setting throttle to neutral (1500) to prevent initial motor spinning")
-    set_rc_channel_pwm(master, 1, PWM_NEUTRAL)
-    set_rc_channel_pwm(master, 3, PWM_NEUTRAL)
-    time.sleep(1)  # Allow time for throttle to stabilize
+    # Wait for the first heartbeat to confirm connection
+    rospy.loginfo("Waiting for Pixhawk heartbeat...")
+    try:
+        master.wait_heartbeat(timeout=30)  # Timeout after 30 seconds
+        rospy.loginfo(f"Heartbeat received from system {master.target_system} component {master.target_component}")
+    except Exception as e:
+        rospy.logerr(f"Heartbeat not received: {e}")
+        return
 
-    # Subscribe to cmd_vel topic
-    rospy.Subscriber('/cmd_vel', Twist, cmd_vel_callback, (master,))
+    # Register shutdown handler to ensure motors are set to neutral
+    rospy.on_shutdown(lambda: shutdown_handler(master))
 
-    # Keep the node running
+    # Initialize motors to neutral
+    initialize_motors(master)
+
+    # Subscribe to the /cmd_vel_adjusted topic to receive velocity commands
+    rospy.Subscriber('/cmd_vel_adjusted', Twist, cmd_vel_callback, (master,))
+
+    # Keep the node running until shutdown
     rospy.spin()
 
 if __name__ == '__main__':
-    main()
+    try:
+        main()
+    except rospy.ROSInterruptException:
+        rospy.loginfo("ROS Interrupt Exception caught. Shutting down.")
+    except KeyboardInterrupt:
+        rospy.loginfo("KeyboardInterrupt detected. Shutting down.")
+    except Exception as e:
+        rospy.logerr(f"An unexpected error occurred: {e}")

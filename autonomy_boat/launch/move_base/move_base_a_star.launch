@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+
+<launch>
+ 
+  <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+
+    <rosparam file="$(find autonomy_boat)/params/costmap_common_params.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find autonomy_boat)/params/costmap_common_params.yaml" command="load" ns="local_costmap" />
+   
+    <rosparam file="$(find autonomy_boat)/params/base_local_planner_params.yaml" command="load" />
+
+
+<!--         <rosparam file="$(find hybrid_astar_planner)/test_the_plugin/param/base_local_planner_params.yaml" command="load" />
+ -->
+    <rosparam file="$(find autonomy_boat)/params/map_nav_params/local_costmap_params.yaml" command="load" />
+    <rosparam file="$(find autonomy_boat)/params/map_nav_params/global_costmap_params.yaml" command="load" />
+
+    <rosparam file="$(find autonomy_boat)/params/move_base_params.yaml" command="load" />
+   
+    <param name="base_global_planner" value="global_planner/GlobalPlanner" />
+    <param name="base_local_planner" value="teb_local_planner/TebLocalPlannerROS" />
+    <param name="use_hybrid_astar" value="true" />
+
+   
+  </node>
+
+
+</launch>

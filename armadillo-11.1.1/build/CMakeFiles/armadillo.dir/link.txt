@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC  -O2  -Wl,--no-as-needed -shared -Wl,-soname,libarmadillo.so.11 -o libarmadillo.so.11.1.1 CMakeFiles/armadillo.dir/src/wrapper1.cpp.o CMakeFiles/armadillo.dir/src/wrapper2.cpp.o  -Wl,-rpath,/usr/lib/aarch64-linux-gnu/hdf5/serial: -lopenblas -llapack /usr/lib/aarch64-linux-gnu/hdf5/serial/libhdf5.so -lpthread -lsz -lz -ldl -lm -larpack -lsuperlu 

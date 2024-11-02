@@ -1,107 +1,103 @@
 /// \file nav.hpp
-/// \brief this is a header file for boat navigation
+/// \brief Header file for boat navigation using frontier exploration
 
-#ifndef BOAT_SLAM_NAVIGATION_INCLUDE_GURAD_HPP
+#ifndef BOAT_SLAM_NAVIGATION_INCLUDE_GUARD_HPP
 #define BOAT_SLAM_NAVIGATION_INCLUDE_GUARD_HPP
 
-#include<ros/ros.h>
-#include<ros/console.h>
-#include<geometry_msgs/PoseStamped.h>
-#include<move_base_msgs/MoveBaseAction.h>
-#include<actionlib/client/simple_action_client.h>
-#include<visualization_msgs/MarkerArray.h>
-#include<boat_slam/costmap.hpp>
-#include<boat_slam/frontier_search.hpp>
-#include<string>
-#include<vector>
-
+#include <ros/ros.h>
+#include <ros/console.h>
+#include <geometry_msgs/PoseStamped.h>
+#include <geometry_msgs/Point.h>
+#include <move_base_msgs/MoveBaseAction.h>
+#include <actionlib/client/simple_action_client.h>
+#include <visualization_msgs/MarkerArray.h>
+#include <std_msgs/String.h> // For waypoint notifications
+#include <boat_slam/costmap.hpp>
+#include <boat_slam/frontier_search.hpp> // Include frontier_search.hpp
+#include <string>
+#include <vector>
+#include <tf/transform_listener.h> // Added for tf::TransformListener
+#include <boost/thread/lock_guard.hpp> // For boost::lock_guard
 
 class Navigation
 {
-
-public: 
-    
-    /// \brief default constructor
+public:
+    /// \brief Default constructor
     Navigation();
-    
-    /// \brief destructor
+
+    /// \brief Destructor
     ~Navigation();
 
-    /// \brief stop the motion
+    /// \brief Stop the robot's motion
     void stop();
 
-
-
 private:
-
-    // parameters
-    double planner_freq_;
-
-    double timeout;     
-
-    double potential_scale_;
-
-    double gain_scale_;
-    
-    ros::Duration progress_timeout_;
-
-    bool visualize_;
-
-    double min_frontier_size;
-
+    // ROS NodeHandles
     ros::NodeHandle private_nh_;
-
     ros::NodeHandle relative_nh_;
 
+    // ROS Publishers
     ros::Publisher marker_array_pub;
-
     ros::Publisher marker_pub;
+    ros::Publisher waypoint_notification_pub_; // Publisher for waypoint notifications
 
+    // Transform Listener
     tf::TransformListener tf_listener_;
 
+    // Costmap and Frontier Search
     Costmap costmap_client_;
-
-    actionlib::SimpleActionClient<move_base_msgs::MoveBaseAction> move_base_client_;
-
     FrontierSearch search_;
 
-    ros::Timer explore_timer_;
-                                                                                                    
-    ros::Timer oneshot_;
+    // Action Client for move_base
+    actionlib::SimpleActionClient<move_base_msgs::MoveBaseAction> move_base_client_;
 
-    std::vector<geometry_msgs::Point> frontier_blacklist_;
+    // ROS Timers
+    ros::Timer explore_timer_; // Timer for planning
+    ros::Timer waypoint_wait_timer_; // Timer for waiting after reaching a waypoint
 
-    geometry_msgs::Point prev_goal_;
-    
-    double prev_dist_; 
+    // Parameters
+    double planner_freq_;
+    double timeout;
+    double potential_scale_;
+    double gain_scale_;
+    double min_frontier_size_;
+    double waypoint_wait_duration_; // Duration to wait after reaching a waypoint
+    double max_frontier_distance_; // Maximum distance to consider for frontiers
 
-    ros::Time last_progress_;
+    // State Variables
+    std::vector<geometry_msgs::Point> frontier_blacklist_; // List of blacklisted frontiers
+    geometry_msgs::Point prev_goal_; // Previous goal position
+    double prev_dist_; // Previous distance to a frontier
+    ros::Time last_progress_; // Last time progress was made
+    size_t last_markers_count_;
 
-    size_t last_markers_count;
+    bool is_waiting_; // Flag to indicate if waiting period is active
 
-    /// \brief plan the frontier point to move to
+    // Member Variables (ensure these are declared)
+    bool visualize_; // Visualization flag
+    ros::Duration progress_timeout_; // Progress timeout duration
+
+    /// \brief Plan the next frontier point to move to
     void makePlan();
 
-    /// \brief function to visualize the frontier
-    /// \param frontiers - frontiers stored in vector 
+    /// \brief Visualize the frontiers
+    /// \param frontiers - Vector of frontier points
     void visualizeFrontiers(const std::vector<Frontier> &frontiers);
 
-    /// \brief check if robot reached the goal
+    /// \brief Callback when a goal is reached
+    /// \param status - Status of the goal
+    /// \param result - Result of the goal
+    /// \param frontier_goal - The frontier point that was targeted
     void reachedGoal(const actionlib::SimpleClientGoalState &status, 
-                     const move_base_msgs::MoveBaseResultConstPtr &result,
-                     const geometry_msgs::Point &frontier_goal);
+                    const move_base_msgs::MoveBaseResultConstPtr &result,
+                    const geometry_msgs::Point &frontier_goal);
 
-    /// \brief function to check if goal in blacklist
-    /// \param goal - goal pose
-    /// \return true/false
+    /// \brief Check if a goal is on the blacklist
+    /// \param goal - The goal point to check
+    /// \return True if the goal is blacklisted, False otherwise
     bool goalOnBlacklist(const geometry_msgs::Point &goal);
-
-
 };
 
-
-
-#endif
-
+#endif // BOAT_SLAM_NAVIGATION_INCLUDE_GUARD_HPP
 
 /// end file

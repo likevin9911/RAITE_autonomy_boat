@@ -63,14 +63,24 @@
   <!-- Teleop Stack
   <include file="$(find usv_gazebo)/launch/usv_keydrive.launch" /> -->
 
-  <!-- Run Move Base -->
-  <include file="$(find autonomy_boat)/launch/include/move_base.launch" />
+   <!-- Run Move Base Original  
+  <include file="$(find autonomy_boat)/launch/move_base/move_base_original.launch" />
+-->
+  <!-- Run Move Base MPC Tric-->
+  <!-- <include file="$(find autonomy_boat)/launch/move_base/move_base_tri.launch" /> -->
 
+  <!-- Run Move Base MPC A*-->
+  <include file="$(find autonomy_boat)/launch/move_base/move_base_a_star.launch" />
 
+  <!-- Run Move Base DWA-->
+  <!-- <include file="$(find autonomy_boat)/launch/move_base/move_base_dwa.launch" /> -->
 
+  <!-- Run Move Base PID DWA-->
+  <!-- <include file="$(find autonomy_boat)/launch/move_base/move_base_agri.launch" /> -->
 
   <!-- Run Rviz -->
   <param name="use_gui" value="true"/>
   <node name="rviz_boat" pkg="rviz" type="rviz" args="-d $(find autonomy_boat)/rviz/jackal_test.rviz"/>
+  <node name="rviz_boat2" pkg="rviz" type="rviz" args="-d $(find autonomy_boat)/rviz/jackal_test.rviz"/>
 
 </launch>

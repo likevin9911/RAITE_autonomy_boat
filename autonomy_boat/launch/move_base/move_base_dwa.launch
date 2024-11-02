@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+
+<launch>
+
+  <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+
+    <!-- Global Costmap Parameters -->
+    <rosparam file="$(find autonomy_boat)/params/costmap_common_params.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find autonomy_boat)/params/map_nav_params/global_costmap_params.yaml" command="load" ns="global_costmap" />
+
+    <!-- Local Costmap Parameters -->
+    <rosparam file="$(find autonomy_boat)/params/costmap_common_params.yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find autonomy_boat)/params/map_nav_params/local_costmap_params.yaml" command="load" ns="local_costmap" />
+
+    <!-- Move Base Parameters -->
+    <rosparam file="$(find autonomy_boat)/params/move_base_params.yaml" command="load" />
+
+    <!-- Local Planner Parameters -->
+    <rosparam file="$(find autonomy_boat)/params/dwa_local_planner_params.yaml" command="load" />
+
+    <!-- Planner Configuration -->
+    <param name="base_global_planner" value="navfn/NavfnROS" />
+    <param name="base_local_planner" value="dwa_local_planner/DWAPlannerROS"/>
+
+    <!-- Topic Remapping -->
+    <remap from="map" to="map"/>
+    <remap from="odom" to="odometry/filtered"/>
+
+  </node>
+
+</launch>
+

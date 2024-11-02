@@ -1,0 +1,32 @@
+# Camera Intrinsic Parameters
+image_width: 1280
+image_height: 720
+camera_name: narrow_stereo
+camera_matrix:
+  data: [876.859226, 0.000000, 605.591165,
+         0.000000, 873.899315, 343.994490,
+         0.000000, 0.000000, 1.000000]
+
+distortion_model: plumb_bob
+distortion_coefficients:
+  data: [0.039367, -0.079156, -0.007038, -0.012732, 0.000000]
+
+rectification_matrix:
+  data: [1.000000, 0.000000, 0.000000,
+         0.000000, 1.000000, 0.000000,
+         0.000000, 0.000000, 1.000000]
+
+projection_matrix:
+  data: [871.262112, 0.000000, 584.338465, 0.000000,
+         0.000000, 886.778383, 339.307915, 0.000000,
+         0.000000, 0.000000, 1.000000, 0.000000]
+
+# Extrinsic Parameters (from LiDAR to Camera)
+rotation_matrix:
+  data: [1.0, 0.0, 0.0,
+         0.0, 1.0, 0.0,
+         0.0, 0.0, 1.0]
+
+translation_vector:
+  data: [0.0127, -0.0254, 0.0]
+

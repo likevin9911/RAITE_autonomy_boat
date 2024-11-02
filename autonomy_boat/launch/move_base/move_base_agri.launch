@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<launch>
+  <node pkg="move_base" type="move_base" respawn="false" name="move_base"  output="screen">
+    <rosparam file="$(find autonomy_boat)/params/agri/costmap_common_params.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find autonomy_boat)/params/agri/costmap_common_params.yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find autonomy_boat)/params/agri/local_costmap_params.yaml" command="load" />
+    <rosparam file="$(find autonomy_boat)/params/agri/global_costmap_params.yaml" command="load" />
+    <rosparam file="$(find autonomy_boat)/params/agri/base_local_planner_params.yaml" command="load" />
+    <rosparam file="$(find autonomy_boat)/params/agri/move_base_params.yaml" command="load" />
+    <rosparam file="$(find autonomy_boat)/params/agri/costmap.yaml" command="load" ns="/costmap_node/costmap" />
+    <param name="base_global_planner" type="string" value="navfn/NavfnROS"/>
+    <!--param name="base_global_planner" value="agribot_global_planner/AgribotGlobalPlanner"/-->
+    <param name="base_local_planner" value="agribot_local_planner/AgribotLocalPlanner"/>
+    <remap from="sensor_pose_odo" to="/odom" />
+    <remap from="cmd_vel" to="/cmd_vel" />
+    <remap from="map" to="/map" />
+        <remap from="base_link" to="base_link" />
+
+  </node>
+  <!--node name="rqt_reconfigure" pkg="rqt_reconfigure" type="rqt_reconfigure" output="screen"/-->
+  <!--node name="rqt_plot" pkg="rqt_plot" type="rqt_plot" output="screen"/-->
+</launch>

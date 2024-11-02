@@ -1,0 +1,47 @@
+DWAPlannerROS:
+  # Robot footprint parameters
+  footprint: [[-0.6, -0.4], [-0.6, 0.4], [0.5, 0.4], [0.5, -0.4]]
+  footprint_padding: 0.0
+
+  # Velocity parameters
+  max_vel_trans: 0.25       # Maximum translational velocity (m/s)
+  min_vel_trans: 0.0       # Minimum translational velocity (m/s)
+  max_vel_theta: 0.35       # Maximum rotational velocity (rad/s)
+  min_vel_theta: 0.0      # Minimum rotational velocity (rad/s)
+
+  # Acceleration limits
+  acc_lim_x: 0.2           # Maximum translational acceleration (m/s^2)
+  acc_lim_theta: 0.5       # Maximum rotational acceleration (rad/s^2)
+
+  # Simulation parameters
+  sim_time: 5.0            # Time to simulate into the future (s)
+  vx_samples: 20           # Number of samples in translational velocity
+  vtheta_samples: 30       # Number of samples in rotational velocity
+
+  # Costmap parameters
+  costmap_obstacles_behind_robot_dist: 1.0
+
+  # Trajectory scoring weights
+  path_distance_bias: 32.0       # Weight for the distance to the global path
+  goal_distance_bias: 24.0       # Weight for the distance to the goal
+  occdist_scale: 0.01            # Weight for obstacle cost
+  heading_lookahead: 0.325       # Distance ahead to look for heading
+  heading_scale: 1.5             # Weight for heading alignment
+
+  # Oscillation parameters
+  oscillation_reset_dist: 0.05
+  oscillation_penalty: 0.0
+  oscillation_window: 2
+
+  # Other parameters
+  forward_point_distance: 0.325   # Distance ahead for forward point selection
+  stop_time_buffer: 0.2           # Time buffer before stopping
+
+  # Trajectory generation
+  trajectory_generation:
+    time_resolution: 0.1         # Time resolution for trajectory simulation (s)
+    trajectory_length: 0.0       # Not used in DWA
+
+  # Publish local plan
+  publish_cost_grid_pc: false
+

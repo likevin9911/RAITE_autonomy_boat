@@ -24,16 +24,23 @@ class Segmentation:
         self.image = None
 
         ''' Load Yolo '''
-        self.net = cv.dnn.readNet("/home/lab/catkin_ws/src/autonomy_boat/config/yolov4-tiny.weights",
-                                  "/home/lab/catkin_ws/src/autonomy_boat/config/yolov4-tiny.cfg")
+        self.net = cv.dnn.readNet(
+            "/home/lab/catkin_ws/src/autonomy_boat/config/test3.weights",
+            "/home/lab/catkin_ws/src/autonomy_boat/config/test3.cfg"
+        )
 
         self.classes = []
-        with open("/home/lab/catkin_ws/src/autonomy_boat/config/coco.names", "r") as f:
+        with open("/home/lab/catkin_ws/src/autonomy_boat/config/test3.names", "r") as f:
             self.classes = [line.strip() for line in f.readlines()]
-        print(self.classes)
+        print(f"Classes loaded: {self.classes}")  # Enhanced print statement
 
         self.layer_names = self.net.getLayerNames()
-        self.outputlayers = [self.layer_names[i - 1] for i in self.net.getUnconnectedOutLayers()]
+        # Updated to handle OpenCV 4.2.0 and above where getUnconnectedOutLayers() returns 1-based indices
+        try:
+            self.outputlayers = [self.layer_names[i - 1] for i in self.net.getUnconnectedOutLayers().flatten()]
+        except AttributeError:
+            # For older OpenCV versions
+            self.outputlayers = [self.layer_names[i[0] - 1] for i in self.net.getUnconnectedOutLayers()]
 
         self.colors = np.random.uniform(0, 255, size=(len(self.classes), 3))
 
@@ -43,7 +50,7 @@ class Segmentation:
             # Convert ROS Image message to OpenCV image
             self.image = self.bridge.imgmsg_to_cv2(data, "bgr8")
         except CvBridgeError as e:
-            rospy.logerr("CvBridge Error: {0}".format(e))
+            rospy.logerr(f"CvBridge Error: {e}")
 
         # Process the image
         self.image_processing()
@@ -56,7 +63,14 @@ class Segmentation:
         height, width = self.image.shape[:2]
 
         # Detecting object
-        blob = cv.dnn.blobFromImage(self.image, 0.00392, (320, 320), (0, 0, 0), True, crop=False)
+        blob = cv.dnn.blobFromImage(
+            self.image, 
+            0.00392, 
+            (416, 416), 
+            (0, 0, 0), 
+            True, 
+            crop=False
+        )
         self.net.setInput(blob)
         outs = self.net.forward(self.outputlayers)
 
@@ -84,7 +98,7 @@ class Segmentation:
                     class_ids.append(class_id)
 
                     # Check if detected object is a doll
-                    if self.classes[class_id] == "person":
+                    if self.classes[class_id].lower() == "doll":  # Updated to match the new class
                         doll_detected = True
         
         indexes = cv.dnn.NMSBoxes(boxes, confidences, 0.4, 0.6)
@@ -97,7 +111,15 @@ class Segmentation:
                 color = self.colors[class_ids[i]]
                 # Label object
                 cv.rectangle(self.image, (x, y), (x + w, y + h), color, 2)
-                cv.putText(self.image, label + " " + str(round(confidence, 2)), (x, y + 30), cv.FONT_HERSHEY_COMPLEX, 0.8, (0, 0, 255), 2)
+                cv.putText(
+                    self.image, 
+                    f"{label} {confidence:.2f}", 
+                    (x, y + 30), 
+                    cv.FONT_HERSHEY_COMPLEX, 
+                    0.8, 
+                    (0, 0, 255), 
+                    2
+                )
 
         # Publish whether a doll was detected or not
         self.doll_detected_pub.publish(Bool(data=doll_detected))
@@ -107,7 +129,7 @@ class Segmentation:
             image_out = self.bridge.cv2_to_imgmsg(self.image, "bgr8")
             self.image_pub.publish(image_out)
         except CvBridgeError as e:
-            rospy.logerr("CvBridge Error: {0}".format(e))
+            rospy.logerr(f"CvBridge Error: {e}")
 
 
 def main():

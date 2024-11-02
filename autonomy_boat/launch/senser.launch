@@ -16,16 +16,16 @@
   <!---  Realsense D435i  Depth Mapping 
   <include file="$(find realsense2_camera)/launch/opensource_tracking.launch" /> -->
 
-  <!---  Realsense D435i  -->
-  <include file="$(find realsense2_camera)/launch/rs_camera.launch" /> 
+  <!---  Realsense D435i   -->
+  <include file="$(find realsense2_camera)/launch/rs_camera.launch" />
 
   <!---  Realsense RGBD  
   <include file="$(find realsense2_camera)/launch/rs_rgbd.launch" /> -->
 
   <node pkg="tf" type="static_transform_publisher" name="boat_to_camera" args="0 0 0 0 0 0  /front_mid_camera_link_optical /camera_link 100" />
 
-  <!---  Realsense Yolov4-Tiny  -->
-  <include file="$(find autonomy_boat)/launch/detection.launch" /> -->
+  <!---  Realsense Yolov4-Tiny   
+  <include file="$(find autonomy_boat)/launch/detection.launch" />-->
 
 
 </launch>
